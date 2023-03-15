@@ -1,0 +1,12 @@
+<ng-container *ngIf="arrowsText">
+    <section class="arrows-previous-next-section">
+
+        <button *ngIf="arrowsText.previousText" routerLink="{{ arrowsText.routerLinkPrevious }}"
+            class="previousArrow btn btn-outline-secondary">
+            << {{arrowsText.previousText}}</button>
+                <button routerLink="{{ arrowsText.routerLinkNext }}" *ngIf="arrowsText.nextText"
+                    class="nextArrow btn btn-outline-dark">{{arrowsText.nextText}}
+                    >></button>
+
+    </section>
+</ng-container>

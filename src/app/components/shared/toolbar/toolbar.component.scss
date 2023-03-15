@@ -1,0 +1,81 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5rem 0;
+}
+
+p {
+  margin: 0;
+}
+
+.space {
+  flex: 1;
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  background-color: lightseagreen;
+  color: white;
+  font-weight: 500;
+
+  &__home {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    svg {
+      margin-left: 0.375rem;
+      margin-right: 0.45rem;
+    }
+  }
+
+  & button {
+    font-weight: 500;
+    background-color: unset;
+    color: white;
+    border-color: transparent;
+    margin-right: 1rem;
+
+    &:first-child {
+      margin-left: 0.5rem;
+    }
+
+    &:hover,
+    &.selected-link {
+      opacity: 0.6;
+    }
+
+    & svg {
+      font-size: 7rem;
+    }
+  }
+
+  & a.selected-link {
+    opacity: 0.6;
+  }
+
+  & #register {
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  & #login {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  & #register:hover,
+  #login:hover {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,38 @@
+.arrows-previous-next-section {
+  --background-color-with-opacity: rgb(32, 178, 170, 0.05);
+  --background-grey-color-with-opacity: rgba(108, 117, 125, 0.051);
+
+  width: 100%;
+  text-align: center;
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  button {
+    width: 12.5rem;
+    font-weight: 600;
+
+    &.btn-outline-secondary {
+    // color: rgb(108, 117, 125);
+    // border-color: #6c757d;
+    background-color: var(--background-grey-color-with-opacity);
+
+      &:hover {
+        color: white;
+        background-color: #6c757d;
+      }
+    }
+
+    &.nextArrow {
+      color: lightseagreen;
+      border-color: lightseagreen;
+      background-color: var(--background-color-with-opacity);
+
+      &:hover {
+        color: white;
+        background-color: lightseagreen;
+      }
+    }
+  }
+}

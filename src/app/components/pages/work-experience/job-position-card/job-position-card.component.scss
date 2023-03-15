@@ -1,0 +1,42 @@
+.jumbotron {
+  --background-color-with-opacity: rgb(32, 178, 170, 0.075);
+
+
+  padding: 2rem 3rem;
+  border: 1px solid rgb(32, 178, 170);
+  background-color: var(--background-color-with-opacity);
+  margin-bottom: 5rem;
+
+  .position-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    &__text {
+      color: lightseagreen;
+    }
+
+    img {
+      height: fit-content;
+    }
+  }
+
+  .location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    max-width: 13.5rem;
+
+    &__remote {
+      font-weight: 400;
+    }
+  }
+
+  .dates {
+    display: flex;
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,59 @@
+<section class="login">
+    <h4>Login</h4>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+
+            <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="miFormulario">
+
+                <!-- Campo de producto -->
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Username</label>
+                    <div class="col-sm-9">
+
+                        <input type="text" class="form-control" formControlName="username"
+                            placeholder="Insert your username">
+
+                        <span class="form-text text-danger" *ngIf="campoEsValido('username')">
+                            At least 3 characters
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Campo de producto -->
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" formControlName="password"
+                            placeholder="Insert your password">
+                        <span class="form-text text-danger" *ngIf="campoEsValido('password')">
+                            At least 6 characters
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-secondary float-right" [disabled]="miFormulario.invalid">
+                            Send
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <ng-container *ngIf="accounts">
+        <div class="container">
+            <div *ngFor="let user of accounts; let i = index">
+                <h3>Account {{i+1}}</h3>
+                <h5>username: </h5>{{user.username | json}}
+                <br>
+                <h5>password: </h5>{{user.password | json}}
+            </div>
+        </div>
+    </ng-container>
+</section>
