@@ -1,0 +1,7 @@
+@import '~bootstrap/scss/bootstrap';
+
+ngb-modal-backdrop.modal-backdrop {
+  --app-bootstrap-backdrop-color-background: var(--app-color-backdrop);
+
+  background: var(--app-bootstrap-backdrop-color-background);
+}

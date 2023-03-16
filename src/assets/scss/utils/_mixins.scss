@@ -1,0 +1,45 @@
+@use 'sass:math';
+
+@mixin header-fade-out-transition {
+  transition-duration: 200ms;
+  transition-timing-function: ease-in;
+}
+
+@mixin header-fade-in-transition {
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+}
+
+@mixin breadcrumb-pos-abs {
+  position: absolute;
+  z-index: var(--app-z-index-breadcrumb);
+}
+
+@mixin step-dot {
+  color: var(--app-color-text-inverse);
+  background-color: var(--app-color-extra-dark);
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 1.875rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+@mixin text-contrast($background-color, $lightColor, $darkColor) {
+  $color-brightness: round(
+    (red($background-color) * 299) + (green($background-color) * 587) +
+      math.div((blue($background-color) * 114), 1000)
+  );
+  $light-color: round(
+    (red(#ffffff) * 299) + (green(#ffffff) * 587) + math.div((blue(#ffffff) * 114), 1000)
+  );
+
+  @if abs($color-brightness) < (math.div($light-color, 2)) {
+    color: $lightColor;
+  } @else {
+    color: $darkColor;
+  }
+}

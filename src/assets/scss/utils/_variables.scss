@@ -1,0 +1,170 @@
+@import 'breakpoints';
+
+$app-color-primary: #3d4454;
+$app-color-primary-lighter: #939caa;
+
+$app-color-pure-light: #ffffff;
+$app-color-extra-light: #f0f0f0;
+$app-color-light: #cccccc;
+$app-color-dark: #575757;
+$app-color-extra-dark: #222222;
+
+$app-color-border: $app-color-primary-lighter;
+$app-color-border-extra-light: $app-color-extra-light;
+$app-color-border-light: $app-color-light;
+$app-color-border-dark: $app-color-dark;
+$app-color-border-extra-dark: $app-color-extra-dark;
+$app-color-border-highlight: #d57e60;
+
+$app-color-error: #ad3132;
+$app-color-alert: #f40c0c;
+$app-color-warning: #f4d10c;
+$app-color-success: #a1ba97;
+$app-color-active-order: #fffaf5;
+
+$app-color-background-light: #fffaf5;
+$app-color-background-lighter: #fafafa;
+$app-color-background-dark: #ead6cf;
+$app-color-background-checkout: #e5e5e5;
+$app-color-background-quiz: #00000080;
+
+$app-color-backdrop: #3d4454;
+
+// Text
+$app-color-text-primary: $app-color-extra-dark;
+$app-color-text-secondary: $app-color-dark;
+$app-color-text-disabled: $app-color-light;
+$app-color-text-inverse: $app-color-pure-light;
+$app-color-icon-wishlist: #cc1616;
+
+// CTA
+$app-color-cta-primary: $app-color-extra-dark;
+$app-color-cta-primary-hover: $app-color-text-secondary;
+$app-color-cta-primary-text: $app-color-pure-light;
+$app-color-cta-secondary: $app-color-primary;
+$app-color-cta-secondary-hover: $app-color-text-secondary;
+$app-color-cta-secondary-text: $app-color-pure-light;
+$app-color-cta-inverse: $app-color-light;
+$app-color-cta-inverse-hover: $app-color-pure-light;
+$app-color-cta-inverse-text: $app-color-extra-dark;
+
+$app-header-search-bar-background-color-modal: rgba(61, 68, 84, 0.8);
+
+:root {
+  // Z-Index
+  --app-z-index-promo-bar: 110;
+  --app-z-index-header: 100;
+  --app-z-index-header-search-bar: 110;
+  --app-z-index-header-navigation: 110;
+  --app-z-index-perks-banner: 80;
+  --app-z-index-breadcrumb: 60;
+  --app-z-index-product-filter-sorting-bar: 100;
+  --app-z-index-product-filter-sorting-bar-fixed: 90;
+  --app-z-index-address-form: 1000;
+  --app-z-index-footer: 89;
+  --app-z-index-global-message: 100;
+  --app-z-index-sticky-add-to-card: 50;
+
+  // Classes that change the z-index.
+  .sort-panel-open {
+    --app-z-index-product-filter-sorting-bar-fixed: 1000;
+  }
+
+  // Colors
+  --app-color-primary: #{$app-color-primary};
+  --app-color-primary-lighter: #{$app-color-primary-lighter};
+
+  --app-color-pure-light: #{$app-color-pure-light};
+  --app-color-extra-light: #{$app-color-extra-light};
+  --app-color-light: #{$app-color-light};
+  --app-color-dark: #{$app-color-dark};
+  --app-color-extra-dark: #{$app-color-extra-dark};
+
+  --app-color-border: #{$app-color-border};
+  --app-color-border-light: #{$app-color-border-light};
+  --app-color-border-extra-light: #{$app-color-border-extra-light};
+  --app-color-border-dark: #{$app-color-border-dark};
+  --app-color-border-extra-dark: #{$app-color-border-extra-dark};
+  --app-color-border-highlight: #{$app-color-border-highlight};
+
+  --app-color-error: #{$app-color-error};
+  --app-color-alert: #{$app-color-alert};
+  --app-color-warning: #{$app-color-warning};
+  --app-color-success: #{$app-color-success};
+  --app-color-active-order: #{$app-color-active-order};
+  --app-color-background-light: #{$app-color-background-light};
+  --app-color-background-lighter: #{$app-color-background-lighter};
+  --app-color-background-dark: #{$app-color-background-dark};
+
+  --app-color-backdrop: #{$app-color-backdrop};
+  --app-color-background-quiz: #{$app-color-background-quiz};
+
+  // Text
+  --app-color-text-primary: #{$app-color-text-primary};
+  --app-color-text-secondary: #{$app-color-text-secondary};
+  --app-color-text-disabled: #{$app-color-text-disabled};
+  --app-color-text-inverse: #{$app-color-text-inverse};
+  --app-color-icon-wishlist: #{$app-color-icon-wishlist};
+
+  // CTA
+  --app-color-cta-primary: #{$app-color-cta-primary};
+  --app-color-cta-primary-hover: #{$app-color-cta-primary-hover};
+  --app-color-cta-primary-text: #{$app-color-cta-primary-text};
+  --app-color-cta-secondary: #{$app-color-cta-secondary};
+  --app-color-cta-secondary-hover: #{$app-color-cta-secondary-hover};
+  --app-color-cta-secondary-text: #{$app-color-cta-secondary-text};
+  --app-color-cta-inverse: #{$app-color-cta-inverse};
+  --app-color-cta-inverse-hover: #{$app-color-cta-inverse-hover};
+  --app-color-cta-inverse-text: #{$app-color-cta-inverse-text};
+
+  --app-header-search-bar-background-color-modal: #{$app-header-search-bar-background-color-modal};
+
+  --app-color-quiz-accent: #{$app-color-primary};
+  --app-color-quiz-cdk-drag-image-desktop-size: 6.5rem;
+  --app-color-quiz-cdk-drag-image-mobile-size: 5rem;
+
+  // Others
+  --app-item-aspect-ratio: 3/4;
+
+  // Header
+  --app-header-mobile-height: 52px;
+  --app-header-desktop-height: 116px;
+  --app-header-desktop-small-height: 116px;
+  --app-header-height: var(--app-header-mobile-height);
+  --app-header-search-bar-height: 7rem;
+
+  //Promo bar
+  --app-promo-bar-height: 0rem;
+
+  // Header + Promobar
+  --app-header-bars-height: calc(var(--app-header-height) + var(--app-promo-bar-height));
+
+  --app-filter-sorting-bar-top: var(--app-promo-bar-height);
+
+  // Form
+  --app-form-label-size: 0.875rem;
+  --app-form-input-height: 3rem;
+  --app-form-input-height-with-button: 3.5rem;
+  --app-form-label-color: #{$app-color-text-primary};
+  --app-form-error-color: #{$app-color-error};
+
+  //Sticky button
+  --app-sticky-height-mobile-button: 5.375rem;
+
+  //PDP
+  --app-image-gallery-min-width: 31rem;
+  --app-image-gallery-max-width: 36rem;
+  --app-summary-margin-top: 4.25rem;
+  --app-image-gallery-desirable-width: clamp(
+    var(--app-image-gallery-min-width),
+    calc(100vh - (var(--app-summary-margin-top) + var(--app-header-bars-height))),
+    var(--app-image-gallery-max-width)
+  );
+
+  //SITE WIDE
+  --app-container-max-width: 90rem;
+
+  @media (min-width: map-get($app-grid-breakpoints, 'xl')) {
+    --app-header-height: var(--app-header-desktop-height);
+  }
+}
