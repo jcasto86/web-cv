@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model';
-import { JobPositionData } from '../homepage/photo-highlights-presentation/photo-highlights-presentation-data.model';
+import { JobPositionData } from './job-position-card/job-position-card-data.model';
+
 import { MockWorkExperienceData } from './work-experience-mock';
 
 @Component({

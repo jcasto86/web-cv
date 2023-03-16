@@ -1,4 +1,5 @@
-import { JobPositionData } from '../homepage/photo-highlights-presentation/photo-highlights-presentation-data.model';
+import { JobPositionData } from "./job-position-card/job-position-card-data.model";
+
 
 export const MockWorkExperienceData: JobPositionData[] = [
   {

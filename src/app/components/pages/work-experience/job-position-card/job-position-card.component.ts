@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { JobPositionData } from '../../homepage/photo-highlights-presentation/photo-highlights-presentation-data.model';
+import { JobPositionData } from './job-position-card-data.model';
+
 
 @Component({
   selector: 'app-job-position-card',

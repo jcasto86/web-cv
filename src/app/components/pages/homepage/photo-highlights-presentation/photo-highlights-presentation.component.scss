@@ -20,6 +20,13 @@
       }
 
       &__highlights {
+        &:not(:last-child) {
+          margin-bottom: 0.75rem;
+        }
+
+        h6 {
+          margin-bottom: unset;
+        }
         p {
           margin-bottom: unset;
         }
