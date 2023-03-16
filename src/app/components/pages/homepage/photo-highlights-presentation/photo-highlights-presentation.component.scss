@@ -1,0 +1,29 @@
+.app-photo-highlights-presentation {
+  padding-bottom: 5rem;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &__photo {
+      margin-right: 5rem;
+    }
+
+    &__text-block {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+
+      &__name {
+        padding-bottom: 2rem;
+      }
+
+      &__highlights {
+        p {
+          margin-bottom: unset;
+        }
+      }
+    }
+  }
+}

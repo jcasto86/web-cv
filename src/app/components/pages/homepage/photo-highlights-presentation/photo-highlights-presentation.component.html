@@ -1,0 +1,26 @@
+<ng-container *ngIf="data$ | async as data">
+  <section class="app-photo-highlights-presentation">
+    <div class="app-photo-highlights-presentation__container">
+      <img
+        *ngIf="data.photo"
+        class="app-photo-highlights-presentation__container__photo"
+        [src]="data.photo.src"
+        [alt]="data.photo.altText"
+      />
+
+      <div class="app-photo-highlights-presentation__container__text-block">
+        <h5 class="app-photo-highlights-presentation__container__text-block__name">
+          {{ data.myName }}
+        </h5>
+
+        <div
+          *ngFor="let pair of data.highlights"
+          class="app-photo-highlights-presentation__container__text-block__highlights"
+        >
+          <h6>{{ pair.title }}</h6>
+          <p>{{ pair.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>

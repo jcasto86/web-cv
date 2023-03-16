@@ -19,6 +19,7 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArrowsPreviousNextSectionComponent } from './components/parts/arrows-previous-next-section/arrows-previous-next-section.component';
 import { JobPositionCardComponent } from './components/pages/work-experience/job-position-card/job-position-card.component';
+import { PhotoHighlightsPresentationComponent } from './components/pages/homepage/photo-highlights-presentation/photo-highlights-presentation.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { JobPositionCardComponent } from './components/pages/work-experience/job
     ContactComponent,
     ArrowsPreviousNextSectionComponent,
     JobPositionCardComponent,
+    PhotoHighlightsPresentationComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

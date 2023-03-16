@@ -12,7 +12,7 @@
             <h5> {{ data.startDate?.getMonth() | number: '2.0'}}/{{ data.startDate?.getFullYear() }} - </h5>
             &nbsp;
             <h5 *ngIf="data.endDate ; else Currently"> {{
-                data.endDate.getMonth()
+                data.endDate.getMonth() | number: '2.0'
                 }}/{{ data.endDate.getFullYear() }} </h5>
             <ng-template #Currently>
                 <h5>Currently</h5>
