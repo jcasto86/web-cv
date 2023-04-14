@@ -1,0 +1,20 @@
+.log-into-account {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__text {
+    margin-right: 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  button .btn.btn-secondary {
+    width: 100%;
+  }
+}

@@ -5,6 +5,7 @@ import {
   FormBuilder,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,17 +18,17 @@ import {
  */
 export class LoginComponent {
   public miFormulario: FormGroup = this.fb.group({
-    username: [, [Validators.required, Validators.minLength(3)]],
-    password: [, [Validators.required, Validators.min(0)]],
+    email: [, [Validators.required, Validators.email]],
+    password: [, [Validators.required, Validators.min(6)]],
   });
 
   public accounts: any = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.miFormulario.reset({
-      username: '',
+      email: '',
       password: '',
     });
   }
@@ -48,6 +49,9 @@ export class LoginComponent {
     this.accounts.push(this.miFormulario.value);
 
     console.log(this.miFormulario.value);
+    console.log(this.miFormulario.valid);
+
     this.miFormulario.reset();
+    this.router.navigateByUrl('/dashboard')
   }
 }

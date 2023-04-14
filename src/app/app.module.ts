@@ -10,11 +10,11 @@ import { ToolbarComponent } from './components/shared/toolbar/toolbar.component'
 import { LinksComponent } from './components/parts/links/links.component';
 import { WorkExperienceComponent } from './components/pages/work-experience/work-experience.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './components/pages/login/login.component';
+
 import { EducationComponent } from './components/pages/education/education.component';
 import { SkillsComponent } from './components/pages/skills/skills.component';
 import { VoluntaryWorkComponent } from './components/pages/voluntary-work/voluntary-work.component';
-import { RegisterComponent } from './components/pages/register/register.component';
+
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArrowsPreviousNextSectionComponent } from './components/parts/arrows-previous-next-section/arrows-previous-next-section.component';
@@ -30,11 +30,9 @@ import { PhotoHighlightsPresentationComponent } from './components/pages/homepag
     ToolbarComponent,
     LinksComponent,
     WorkExperienceComponent,
-    LoginComponent,
     EducationComponent,
     SkillsComponent,
     VoluntaryWorkComponent,
-    RegisterComponent,
     ContactComponent,
     ArrowsPreviousNextSectionComponent,
     JobPositionCardComponent,
@@ -44,4 +42,4 @@ import { PhotoHighlightsPresentationComponent } from './components/pages/homepag
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

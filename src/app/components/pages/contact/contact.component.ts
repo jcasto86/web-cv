@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
     // routerLinkNext: '/skills',
   };
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

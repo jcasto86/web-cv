@@ -1,0 +1,93 @@
+<section class="register">
+  <h4>Register form</h4>
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="miFormulario">
+        <!-- Name field -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Name</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="name"
+              placeholder="Insert your name"
+            />
+
+            <span class="form-text text-danger" *ngIf="campoEsValido('email')">
+              At least 3 characters
+            </span>
+          </div>
+        </div>
+
+        <!-- Email field -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="email"
+              placeholder="Insert your email"
+            />
+
+            <span class="form-text text-danger" *ngIf="campoEsValido('email')">
+              At least 3 characters
+            </span>
+          </div>
+        </div>
+
+        <!-- Password field -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Password</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="password"
+              placeholder="Insert your password"
+            />
+            <span class="form-text text-danger" *ngIf="campoEsValido('password')">
+              At least 6 characters
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <button
+              type="submit"
+              class="btn btn-secondary float-right"
+              [disabled]="miFormulario.invalid"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="log-into-account">
+    <p class="log-into-account__text">Already registered?</p>
+    <a class="log-into-account__link" routerLink="/auth/login">Log in</a>
+  </div>
+
+  <ng-container *ngIf="accounts">
+    <div class="container">
+      <div *ngFor="let user of accounts; let i = index">
+        <h3>Account {{ i + 1 }}</h3>
+        <h5>name:</h5>
+        {{ user.name | json }}
+        <br />
+        <h5>email:</h5>
+        {{ user.email | json }}
+        <br />
+        <h5>password:</h5>
+        {{ user.password | json }}
+      </div>
+    </div>
+  </ng-container>
+</section>

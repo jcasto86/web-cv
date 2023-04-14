@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,17 +9,20 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   public miFormulario: FormGroup = this.fb.group({
-    username: [, [Validators.required, Validators.minLength(3)]],
-    password: [, [Validators.required, Validators.min(0)]],
+    name: [, [Validators.required, Validators.min(3)]],
+    email: [, [Validators.required, Validators.email]],
+    password: [, [Validators.required, Validators.min(6)]],
   });
 
   public accounts: any = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private router: Router) { }
 
   ngOnInit() {
     this.miFormulario.reset({
-      username: '',
+      name: '',
+      email: '',
       password: '',
     });
   }
@@ -40,5 +44,7 @@ export class RegisterComponent implements OnInit {
 
     console.log(this.miFormulario.value);
     this.miFormulario.reset();
+
+    this.router.navigateByUrl('/dashboard')
   }
 }
