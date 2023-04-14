@@ -4,7 +4,7 @@
 
   <div class="row">
     <div class="col">
-      <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="miFormulario">
+      <form (ngSubmit)="registro()" autocomplete="off" [formGroup]="miFormulario">
         <!-- Name field -->
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label">Name</label>
@@ -16,9 +16,9 @@
               placeholder="Insert your name"
             />
 
-            <span class="form-text text-danger" *ngIf="campoEsValido('email')">
+            <!-- <span class="form-text text-danger" *ngIf="campoEsValido('email')">
               At least 3 characters
-            </span>
+            </span> -->
           </div>
         </div>
 
@@ -33,9 +33,9 @@
               placeholder="Insert your email"
             />
 
-            <span class="form-text text-danger" *ngIf="campoEsValido('email')">
+            <!-- <span class="form-text text-danger" *ngIf="campoEsValido('email')">
               At least 3 characters
-            </span>
+            </span> -->
           </div>
         </div>
 
@@ -49,9 +49,9 @@
               formControlName="password"
               placeholder="Insert your password"
             />
-            <span class="form-text text-danger" *ngIf="campoEsValido('password')">
+            <!-- <span class="form-text text-danger" *ngIf="campoEsValido('password')">
               At least 6 characters
-            </span>
+            </span> -->
           </div>
         </div>
 
@@ -74,20 +74,4 @@
     <p class="log-into-account__text">Already registered?</p>
     <a class="log-into-account__link" routerLink="/auth/login">Log in</a>
   </div>
-
-  <ng-container *ngIf="accounts">
-    <div class="container">
-      <div *ngFor="let user of accounts; let i = index">
-        <h3>Account {{ i + 1 }}</h3>
-        <h5>name:</h5>
-        {{ user.name | json }}
-        <br />
-        <h5>email:</h5>
-        {{ user.email | json }}
-        <br />
-        <h5>password:</h5>
-        {{ user.password | json }}
-      </div>
-    </div>
-  </ng-container>
 </section>

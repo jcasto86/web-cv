@@ -1,9 +1,9 @@
 <h1>Dashboard</h1>
 <hr />
 
-<p>Esta página solo funciona si estoy autenticado.</p>
+<p>Esta página sólo funciona si estás autenticado</p>
 
 <h4>User info</h4>
-<pre> ... </pre>
+<pre>{{ usuario | json }}</pre>
 
-<button class="btn btn-primary" (click)="logout()">Logout</button>
+<button (click)="logout()">Logout</button>

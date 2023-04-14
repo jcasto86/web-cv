@@ -21,6 +21,8 @@ import { ArrowsPreviousNextSectionComponent } from './components/parts/arrows-pr
 import { JobPositionCardComponent } from './components/pages/work-experience/job-position-card/job-position-card.component';
 import { PhotoHighlightsPresentationComponent } from './components/pages/homepage/photo-highlights-presentation/photo-highlights-presentation.component';
 
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,7 @@ import { PhotoHighlightsPresentationComponent } from './components/pages/homepag
     JobPositionCardComponent,
     PhotoHighlightsPresentationComponent,
   ],
-  imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
