@@ -9,6 +9,8 @@ import { SkillsComponent } from './components/pages/skills/skills.component';
 import { VoluntaryWorkComponent } from './components/pages/voluntary-work/voluntary-work.component';
 import { RegisterComponent } from './auth/pages/register/register.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
+import { ValidarTokenGuard } from './guards/validar-token.guard';
+import { AddDataComponent } from './components/pages/add-data/add-data.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -17,6 +19,7 @@ const routes: Routes = [
   { path: 'skills', component: SkillsComponent },
   { path: 'voluntary-work', component: VoluntaryWorkComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'add-data', component: AddDataComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   {
@@ -25,7 +28,13 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule)
+    loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule),
+    canActivate: [ValidarTokenGuard],
+    canLoad: [ValidarTokenGuard]
+  },
+  {
+    path: '**',
+    redirectTo: 'auth'
   }
 ];
 

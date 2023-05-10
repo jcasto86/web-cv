@@ -73,7 +73,6 @@ export class RegisterComponent {
     private router: Router,
     private authService: AuthService) { }
 
-
   registro() {
     const { name, email, password } = this.miFormulario.value;
 
@@ -86,10 +85,6 @@ export class RegisterComponent {
           Swal.fire('Error', ok, 'error');
         }
       });
-
   }
-
-
-
 }
 

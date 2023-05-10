@@ -31,18 +31,34 @@ export class AuthService {
 
     return this.http.post<AuthResponse>(url, body)
       .pipe(
-        tap(({ ok, token }) => {
-          if (ok) {
-            localStorage.setItem('token', token!);
+        tap(response => {
+          if (response.ok) {
+            localStorage.setItem('token', response.token!);
           }
         }),
-        map(resp => resp.ok),
+        map(response => response.ok),
         catchError(err => of(err.error.msg))
       );
-
   }
 
+  addJobPosition(logoHref: string, logoSrc: string, logoAltText: string, position: string, startDate: Date, endDate: Date, city: string, remote: boolean, description: string) {
 
+    const url = `${this.baseUrl}/auth/add-job-position`;
+    const body = {
+      logoHref, logoSrc, logoAltText, position, startDate, endDate, city, remote, description
+    };
+
+    return this.http.post<AuthResponse>(url, body)
+      .pipe(
+        tap(response => {
+          if (response.ok) {
+            localStorage.setItem('token', response.token!);
+          }
+        }),
+        map(response => response.ok),
+        catchError(err => of(err.error.msg))
+      );
+  }
 
   login(email: string, password: string) {
 
@@ -51,19 +67,16 @@ export class AuthService {
 
     return this.http.post<AuthResponse>(url, body)
       .pipe(
-        tap(resp => {
-          console.log('Respuesta Auth Service: ', resp);
-          if (resp.ok) {
-            localStorage.setItem('token', resp.token!);
+        tap(response => {
+          console.log('Auth Service response: ', response);
+          if (response.ok) {
+            localStorage.setItem('token', response.token!);
           }
         }),
-        map(resp => resp.ok),
+        map(response => response.ok),
         catchError(err => of(err.error.msg))
       );
   }
-
-
-
 
   validarToken(): Observable<boolean> {
 
@@ -85,12 +98,9 @@ export class AuthService {
         }),
         catchError(err => of(false))
       );
-
   }
 
   logout() {
     localStorage.clear();
   }
-
-
 }
