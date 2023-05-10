@@ -23,6 +23,7 @@ import { PhotoHighlightsPresentationComponent } from './components/pages/homepag
 
 import { HttpClientModule } from '@angular/common/http';
 import { AddDataComponent } from './components/pages/add-data/add-data.component'
+import { EducationCardComponent } from './components/pages/education/education-card/education-card.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AddDataComponent } from './components/pages/add-data/add-data.component
     LinksComponent,
     WorkExperienceComponent,
     EducationComponent,
+    EducationCardComponent,
     SkillsComponent,
     VoluntaryWorkComponent,
     ContactComponent,
