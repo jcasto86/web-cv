@@ -1,5 +1,6 @@
 export interface EducationData {
   position?: string;
+  university?: string;
   logo?: SchoolLogo;
   startDate?: Date;
   endDate?: Date;

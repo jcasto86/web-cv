@@ -3,56 +3,42 @@ import { EducationData } from "./education-card/education-card-data.model";
 export const MockEducationData: EducationData[] = [
   {
     position: 'Grado Superior en Desarrollo de Aplicaciones Web',
+    university: 'ILERNA',
     logo: {
       href: 'https://www.ilerna.com/',
       src: 'https://www.ilerna.es/front-line/themes/spaghetti/img/logo_ilerna.svg',
       altText: 'Ilerna_logo',
     },
     startDate: new Date(),
-    // endDate: new Date(),
-    remote: true,
-    city: 'Sevilla - Elche',
-    description: `✅ 𝐒𝐀𝐏 Commerce Cloud (Hybris) · 𝐒𝐩𝐚𝐫𝐭𝐚𝐜𝐮𝐬
-                  🅰️ 𝐀𝐧𝐠𝐮𝐥𝐚𝐫 𝟏𝟐
-                  💻 TypeScript · HTML · CSS/SASS
-                  💠 Atlassian (Jira · Bitbucket · Sourcetree · Confluence)
-                  ↪️ Agile Methodologies · Scrum & Kanban
-                  `,
+    endDate: new Date(),
+    remote: false,
+    city: 'Sevilla',
+    // description: ``,
   },
   {
-    position: 'marketing & e-commerce manager',
+    position: 'MBA & Marketing',
+    university: 'IME Business School',
     logo: {
-      href: 'https://teralco.com/',
-      src: 'https://static.wixstatic.com/media/0e1495_93a44fd88bfa447ba7973c854654168e~mv2.png/v1/fill/w_152,h_49,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/teralco_group_logo.png',
+      href: 'https://imeusal.com/',
+      src: 'https://static.wixstatic.com/media/0e1495_bb955d780875419d8caaec31f48bdbab~mv2.png/v1/fill/w_74,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/IME%20Business%20School.png',
       altText: 'Teralco_logo',
     },
     startDate: new Date(),
     endDate: new Date(),
     remote: false,
-    city: 'Sevilla - Elche',
-    description: `✅ 𝐒𝐀𝐏 Commerce Cloud (Hybris) · 𝐒𝐩𝐚𝐫𝐭𝐚𝐜𝐮𝐬
-                  🅰️ 𝐀𝐧𝐠𝐮𝐥𝐚𝐫 𝟏𝟐
-                  💻 TypeScript · HTML · CSS/SASS
-                  💠 Atlassian (Jira · Bitbucket · Sourcetree · Confluence)
-                  ↪️ Agile Methodologies · Scrum & Kanban
-                  `,
+    city: 'Salamanca',
   },
   {
-    position: 'marketing manager',
+    position: 'Ciencias Empresariales',
+    university: 'Universidad de Sevilla',
     logo: {
-      href: 'https://teralco.com/',
-      src: 'https://static.wixstatic.com/media/0e1495_93a44fd88bfa447ba7973c854654168e~mv2.png/v1/fill/w_152,h_49,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/teralco_group_logo.png',
+      href: 'https://www.us.es/',
+      src: 'https://static.wixstatic.com/media/0e1495_b0d1b237430c4fe69da4d468c0802d6b~mv2.jpg/v1/fill/w_74,h_74,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/US%20logo.jpg',
       altText: 'Teralco_logo',
     },
     startDate: new Date(),
     endDate: new Date(),
     remote: false,
     city: 'Sevilla',
-    description: `✅ 𝐒𝐀𝐏 Commerce Cloud (Hybris) · 𝐒𝐩𝐚𝐫𝐭𝐚𝐜𝐮𝐬
-                  🅰️ 𝐀𝐧𝐠𝐮𝐥𝐚𝐫 𝟏𝟐
-                  💻 TypeScript · HTML · CSS/SASS
-                  💠 Atlassian (Jira · Bitbucket · Sourcetree · Confluence)
-                  ↪️ Agile Methodologies · Scrum & Kanban
-                  `,
   },
 ];
