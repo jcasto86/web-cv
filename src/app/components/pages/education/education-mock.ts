@@ -6,8 +6,7 @@ export const MockEducationData: EducationData[] = [
     university: 'ILERNA',
     logo: {
       href: 'https://www.ilerna.com/',
-      src: 'https://www.ilerna.es/front-line/themes/spaghetti/img/logo_ilerna.svg',
-      altText: 'Ilerna_logo',
+      src: 'https://recursos.ilerna.es/hs-fs/hubfs/ilerna-online-logo.png?width=693&name=ilerna-online-logo.png',
     },
     startDate: new Date(),
     endDate: new Date(),
@@ -33,7 +32,7 @@ export const MockEducationData: EducationData[] = [
     university: 'Universidad de Sevilla',
     logo: {
       href: 'https://www.us.es/',
-      src: 'https://static.wixstatic.com/media/0e1495_b0d1b237430c4fe69da4d468c0802d6b~mv2.jpg/v1/fill/w_74,h_74,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/US%20logo.jpg',
+      src: 'https://seeklogo.com/images/U/universidad-de-sevilla-logo-214320A847-seeklogo.com.png',
       altText: 'Teralco_logo',
     },
     startDate: new Date(),

@@ -1,18 +1,24 @@
 .education-card {
   --background-color-with-opacity: rgba(240, 128, 128, 0.075);
 
-  padding: 2rem 3rem;
+  padding: 2rem;
   border: 1px solid rgb(240, 128, 128);
   background-color: var(--background-color-with-opacity);
-  width: 22.5rem;
+  width: 20rem;
   height: auto;
 
   display: flex;
   flex-direction: column;
   text-align: center;
 
-  & * {
+  & *:not(:last-child) {
     margin-bottom: 1rem;
+  }
+
+  &__logo {
+    img {
+      max-width: 6rem;
+    }
   }
 
   &__study-name {
