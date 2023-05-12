@@ -2,7 +2,7 @@ import { EducationData } from "./education-card/education-card-data.model";
 
 export const MockEducationData: EducationData[] = [
   {
-    position: 'Grado Superior en Desarrollo de Aplicaciones Web',
+    studyName: 'DAW',
     university: 'ILERNA',
     logo: {
       href: 'https://www.ilerna.com/',
@@ -16,7 +16,7 @@ export const MockEducationData: EducationData[] = [
     // description: ``,
   },
   {
-    position: 'MBA & Marketing',
+    studyName: 'MBA & Marketing',
     university: 'IME Business School',
     logo: {
       href: 'https://imeusal.com/',
@@ -29,7 +29,7 @@ export const MockEducationData: EducationData[] = [
     city: 'Salamanca',
   },
   {
-    position: 'Ciencias Empresariales',
+    studyName: 'Ciencias Empresariales',
     university: 'Universidad de Sevilla',
     logo: {
       href: 'https://www.us.es/',

@@ -1,48 +1,27 @@
-.jumbotron {
+.education-card {
   --background-color-with-opacity: rgba(240, 128, 128, 0.075);
 
-  min-width: 55rem;
   padding: 2rem 3rem;
   border: 1px solid rgb(240, 128, 128);
   background-color: var(--background-color-with-opacity);
-  margin-bottom: 5rem;
+  width: 22.5rem;
+  height: auto;
 
-  .education-logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
-    &__text {
-      color: rgb(240, 128, 128);
-    }
-
-    img {
-      height: fit-content;
-    }
+  & * {
+    margin-bottom: 1rem;
   }
 
-  .date-and-location {
+  &__study-name {
+    color: rgb(240, 128, 128);
+  }
+
+  &__dates {
     display: flex;
-    flex-direction: column;
-
-    .dates {
-      display: flex;
-      flex-direction: row;
-      margin-right: 2rem;
-    }
-
-    .location {
-      // display: flex;
-      // flex-direction: row;
-      // justify-content: space-between;
-      // align-items: baseline;
-      // flex-wrap: wrap;
-      // max-width: 13.5rem;
-
-      &__remote {
-        font-weight: 400;
-      }
-    }
+    flex-direction: row;
+    align-self: center;
   }
 }
