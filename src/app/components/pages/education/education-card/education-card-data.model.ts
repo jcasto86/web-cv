@@ -1,6 +1,7 @@
-export interface JobPositionData {
-  position?: string;
-  logo?: CompanyLogo;
+export interface EducationData {
+  studyName?: string;
+  university?: string;
+  logo?: SchoolLogo;
   startDate?: Date;
   endDate?: Date;
   remote?: boolean;
@@ -8,7 +9,7 @@ export interface JobPositionData {
   description?: string;
 }
 
-export interface CompanyLogo {
+export interface SchoolLogo {
   href?: string;
   src?: string;
   altText?: string;

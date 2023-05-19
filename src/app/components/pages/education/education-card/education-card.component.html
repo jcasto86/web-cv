@@ -1,0 +1,37 @@
+<ng-container *ngIf="educationCardData as data">
+  <div class="education-card jumbotron">
+    <a
+      class="education-card__logo"
+      title="{{ data.university }}"
+      [href]="data.logo?.href"
+      target="_blank"
+    >
+      <img [src]="data.logo?.src" [alt]="data.logo?.altText" />
+    </a>
+
+    <h5 class="education-card__study-name">{{ data.studyName | titlecase }}</h5>
+
+    <div class="education-card__dates" [ngClass]="{ 'currently-exists': !data.endDate }">
+      <h6>
+        {{ data.startDate?.getMonth() | number : '2.0' }}/{{ data.startDate?.getFullYear() }} -
+      </h6>
+      &nbsp;
+      <h6 *ngIf="data.endDate; else Currently">
+        {{ data.endDate.getMonth() | number : '2.0' }}/{{ data.endDate.getFullYear() }}
+      </h6>
+      <ng-template #Currently>
+        <h6>Currently</h6>
+      </ng-template>
+    </div>
+
+    <div class="education-card__location">
+      <h6>{{ data.city | titlecase }}</h6>
+      <h6 class="education-card__location__remote" *ngIf="data.remote">(Remote)</h6>
+    </div>
+
+    <ng-container class="education-card__description" *ngIf="data.description">
+      <hr class="my-4" />
+      <p>{{ data.description }}</p>
+    </ng-container>
+  </div>
+</ng-container>

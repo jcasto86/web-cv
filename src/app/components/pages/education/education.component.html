@@ -1,3 +1,7 @@
-<p>education works!</p>
+<div class="education" *ngIf="educationCardData$ | async as educationCardData">
+  <ng-container *ngFor="let CardData of educationCardData">
+    <app-education-card [educationCardData]="CardData"></app-education-card>
+  </ng-container>
+</div>
 
 <app-arrows-previous-next-section [arrowsText]="arrowsData"></app-arrows-previous-next-section>

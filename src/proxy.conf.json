@@ -1,0 +1,10 @@
+{
+  "/api/users": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/api/job-positions": {
+    "target": "http://localhost:3000",
+    "secure": false
+  }
+}

@@ -1,16 +1,15 @@
-<ng-container *ngIf="jobPositionCardData as data">
+<ng-container *ngIf="data">
   <div class="jumbotron">
     <div class="position-logo">
       <h3 class="position-logo__text">{{ data.position | titlecase }}</h3>
-      <a [href]="data.logo?.href" target="_blank">
-        <img [src]="data.logo?.src" [alt]="data.logo?.altText" />
+      <a [href]="data.logoHref" target="_blank">
+        <img [src]="data.logoSrc" [alt]="data.logoAltText" />
       </a>
     </div>
 
     <div class="dates" [ngClass]="{ 'currently-exists': !data.endDate }">
-      <h5>
-        {{ data.startDate?.getMonth() | number : '2.0' }}/{{ data.startDate?.getFullYear() }} -
-      </h5>
+      <!-- <h5>{{ data.startDate.getMonth() | number : '2.0' }}/{{ data.startDate.getFullYear() }} -</h5> -->
+      <h5>{{ data.startDate }} -</h5>
       &nbsp;
       <h5 *ngIf="data.endDate; else Currently">
         {{ data.endDate.getMonth() | number : '2.0' }}/{{ data.endDate.getFullYear() }}

@@ -23,6 +23,8 @@ import { PhotoHighlightsPresentationComponent } from './components/pages/homepag
 
 import { HttpClientModule } from '@angular/common/http';
 import { AddDataComponent } from './components/pages/add-data/add-data.component'
+import { EducationCardComponent } from './components/pages/education/education-card/education-card.component';
+import { JobPositionFormComponent } from './components/pages/work-experience/job-position-form/job-position-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { AddDataComponent } from './components/pages/add-data/add-data.component
     LinksComponent,
     WorkExperienceComponent,
     EducationComponent,
+    EducationCardComponent,
     SkillsComponent,
     VoluntaryWorkComponent,
     ContactComponent,
@@ -41,6 +44,7 @@ import { AddDataComponent } from './components/pages/add-data/add-data.component
     JobPositionCardComponent,
     PhotoHighlightsPresentationComponent,
     AddDataComponent,
+    JobPositionFormComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
