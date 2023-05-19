@@ -9,13 +9,6 @@
   height: 100%;
   overflow-y: auto;
 
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
   background-color: rgb(103, 239, 232);
   border: 3px solid rgb(32, 178, 170);
 
@@ -31,13 +24,9 @@
     }
 
     &__title {
-      font-size: 1.375rem;
+      font-size: 1rem;
       margin-bottom: 0;
     }
-  }
-
-  button.btn.btn-secondary {
-    width: 100%;
   }
 }
 
@@ -60,20 +49,9 @@
       width: 30rem;
       justify-content: space-between;
 
-      &__button-close {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
       &__title {
         font-size: 2rem;
-        margin-right: 1.5rem;
       }
-    }
-
-    button.btn.btn-secondary {
-      float: right;
-      width: 25%;
     }
   }
 }
