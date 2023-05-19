@@ -1,0 +1,16 @@
+.job-position-form__content {
+  z-index: 2;
+
+  padding: 3rem 20rem;
+  margin: 0;
+  top: 50%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(103, 239, 232);
+  border: 3px solid rgb(32, 178, 170);
+}
+
+.app-backdrop {
+  --app-backdrop-background-color: rgb(207, 252, 250);
+}

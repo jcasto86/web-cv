@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model';
 import { DataService } from 'src/app/data.service';
@@ -11,7 +11,16 @@ import { JobPosition } from './job-position-data.model';
   styleUrls: ['./work-experience.component.scss'],
 })
 export class WorkExperienceComponent implements OnInit {
+
+  @HostListener('window:keyup.escape') handleKeyUp() {
+    this.closeChild()
+  }
+
   public jobPositionsCardData: JobPosition[] | undefined;
+
+  // public isFormOpen: boolean = false;
+
+  public isChildOpen = false;
 
   public arrowsData: PreviousNextArrows = {
     previousText: 'Homepage',
@@ -34,5 +43,15 @@ export class WorkExperienceComponent implements OnInit {
         }
       )
     ).subscribe();
+  }
+
+  // Method to open the child component
+  openChild() {
+    this.isChildOpen = true;
+  }
+
+  // Method to close the child component
+  closeChild() {
+    this.isChildOpen = false;
   }
 }

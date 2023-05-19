@@ -1,4 +1,8 @@
+<app-job-position-form *ngIf="isChildOpen" (close)="closeChild()"></app-job-position-form>
 <div class="work-experience" *ngIf="jobPositionsCardData">
+  <div class="work-experience__add-position-button">
+    <button class="btn btn-primary" (click)="openChild()">+ Add Job Position</button>
+  </div>
   <ng-container *ngFor="let cardData of jobPositionsCardData">
     <app-job-position-card [data]="cardData"></app-job-position-card>
   </ng-container>

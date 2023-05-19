@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddDataComponent } from './components/pages/add-data/add-data.component'
 import { EducationCardComponent } from './components/pages/education/education-card/education-card.component';
 import { JobPositionFormComponent } from './components/pages/work-experience/job-position-form/job-position-form.component';
+import { BackdropComponent } from './components/parts/backdrop/backdrop.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { JobPositionFormComponent } from './components/pages/work-experience/job
     PhotoHighlightsPresentationComponent,
     AddDataComponent,
     JobPositionFormComponent,
+    BackdropComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [],

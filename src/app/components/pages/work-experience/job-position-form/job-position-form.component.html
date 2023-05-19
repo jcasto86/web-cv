@@ -1,1 +1,52 @@
-<p>job-position-form works!</p>
+<div class="job-position-form__content jumbotron">
+  <button class="job-position-form__content__button-close btn btn-primary" (click)="close.emit()">
+    X
+  </button>
+  <h1 class="job-position-form__content__title">JOB POSITION FORM</h1>
+
+  <form [formGroup]="jobPositionForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="logoHref">Logo Href:</label>
+      <input type="text" id="logoHref" formControlName="logoHref" required />
+    </div>
+    <div>
+      <label for="logoSrc">Logo Src:</label>
+      <input type="text" id="logoSrc" formControlName="logoSrc" required />
+    </div>
+    <div>
+      <label for="logoAltText">Logo Alt Text:</label>
+      <input type="text" id="logoAltText" formControlName="logoAltText" required />
+    </div>
+    <div>
+      <label for="position">Position:</label>
+      <input type="text" id="position" formControlName="position" required />
+    </div>
+    <div>
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" formControlName="startDate" required />
+    </div>
+    <div>
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" formControlName="endDate" />
+    </div>
+    <div>
+      <label for="city">City:</label>
+      <input type="text" id="city" formControlName="city" required />
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" required></textarea>
+    </div>
+    <div>
+      <label for="remote">Remote:</label>
+      <select id="remote" formControlName="remote" required>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" [disabled]="jobPositionForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>
+<app-backdrop (backdropCliked)="close.emit()"></app-backdrop>
