@@ -1,52 +1,115 @@
 <div class="job-position-form__content jumbotron">
-  <button class="job-position-form__content__button-close btn btn-primary" (click)="close.emit()">
-    X
-  </button>
-  <h1 class="job-position-form__content__title">JOB POSITION FORM</h1>
+  <div class="job-position-form__content__head-line">
+    <button
+      class="job-position-form__content__head-line__button-close btn btn-primary"
+      (click)="close.emit()"
+    >
+      X
+    </button>
+    <h1 class="job-position-form__content__head-line__title">JOB POSITION FORM</h1>
+  </div>
 
-  <form [formGroup]="jobPositionForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="logoHref">Logo Href:</label>
-      <input type="text" id="logoHref" formControlName="logoHref" required />
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="jobPositionForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="logoHref">Logo Href:</label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="text"
+              id="logoHref"
+              formControlName="logoHref"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="logoSrc">Logo Src:</label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="text"
+              id="logoSrc"
+              formControlName="logoSrc"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="logoAltText">Logo Alt Text:</label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="text"
+              id="logoAltText"
+              formControlName="logoAltText"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="position">Position:</label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="text"
+              id="position"
+              formControlName="position"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="startDate">Start Date:</label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="date"
+              id="startDate"
+              formControlName="startDate"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="endDate">End Date:</label>
+          <div class="col-sm-9">
+            <input class="form-control" type="date" id="endDate" formControlName="endDate" />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="city">City:</label>
+          <div class="col-sm-9">
+            <input class="form-control" type="text" id="city" formControlName="city" required />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="description">Description:</label>
+          <div class="col-sm-9">
+            <textarea
+              class="form-control"
+              id="description"
+              formControlName="description"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="remote">Remote:</label>
+          <div class="col-sm-9">
+            <select class="form-control" id="remote" formControlName="remote" required>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <button type="submit" [disabled]="jobPositionForm.invalid">Submit</button>
+        </div>
+      </form>
     </div>
-    <div>
-      <label for="logoSrc">Logo Src:</label>
-      <input type="text" id="logoSrc" formControlName="logoSrc" required />
-    </div>
-    <div>
-      <label for="logoAltText">Logo Alt Text:</label>
-      <input type="text" id="logoAltText" formControlName="logoAltText" required />
-    </div>
-    <div>
-      <label for="position">Position:</label>
-      <input type="text" id="position" formControlName="position" required />
-    </div>
-    <div>
-      <label for="startDate">Start Date:</label>
-      <input type="date" id="startDate" formControlName="startDate" required />
-    </div>
-    <div>
-      <label for="endDate">End Date:</label>
-      <input type="date" id="endDate" formControlName="endDate" />
-    </div>
-    <div>
-      <label for="city">City:</label>
-      <input type="text" id="city" formControlName="city" required />
-    </div>
-    <div>
-      <label for="description">Description:</label>
-      <textarea id="description" formControlName="description" required></textarea>
-    </div>
-    <div>
-      <label for="remote">Remote:</label>
-      <select id="remote" formControlName="remote" required>
-        <option value="0">No</option>
-        <option value="1">Yes</option>
-      </select>
-    </div>
-    <div>
-      <button type="submit" [disabled]="jobPositionForm.invalid">Submit</button>
-    </div>
-  </form>
+  </div>
 </div>
 <app-backdrop (backdropCliked)="close.emit()"></app-backdrop>

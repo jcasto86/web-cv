@@ -1,16 +1,57 @@
 .job-position-form__content {
   z-index: 2;
-
-  padding: 3rem 20rem;
-  margin: 0;
-  top: 50%;
   position: fixed;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 0;
+  // height: fit-content;
+  height: 100%;
+  overflow-y: auto;
+
   background-color: rgb(103, 239, 232);
   border: 3px solid rgb(32, 178, 170);
+
+  &__head-line {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__button-close {
+      margin-left: 1rem;
+      margin-right: 2rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .app-backdrop {
   --app-backdrop-background-color: rgb(207, 252, 250);
+}
+
+@media (min-width: 480px) {
+  .job-position-form__content {
+    height: fit-content;
+    z-index: 2;
+    padding: 3rem 8rem;
+    margin: 0;
+    top: 50%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__head-line {
+      width: 30rem;
+      justify-content: space-between;
+
+      &__title {
+        font-size: 2rem;
+      }
+    }
+  }
 }
