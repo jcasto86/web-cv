@@ -1,7 +1,13 @@
 <section class="homepage">
-  <pre
-    >{{ data | json }}
-  </pre>
+  <ng-container *ngIf="users">
+    <div *ngFor="let user of users; let i = index">
+      <div>
+        <h5>Usuario {{ i + 1 }}</h5>
+        <pre>{{ user | json }}</pre>
+      </div>
+    </div>
+  </ng-container>
+
   <app-photo-highlights-presentation></app-photo-highlights-presentation>
 
   <h5 class="homepage__title">About me</h5>

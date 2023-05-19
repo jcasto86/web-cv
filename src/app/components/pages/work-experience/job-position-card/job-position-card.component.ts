@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { JobPositionData } from './job-position-card-data.model';
+import { JobPosition } from '../job-position-data.model';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { JobPositionData } from './job-position-card-data.model';
   styleUrls: ['./job-position-card.component.scss'],
 })
 export class JobPositionCardComponent implements OnInit {
-  @Input() jobPositionCardData?: JobPositionData;
+  @Input() data?: JobPosition;
 
   constructor() { }
 

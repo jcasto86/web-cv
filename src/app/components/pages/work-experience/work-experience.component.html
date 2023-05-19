@@ -1,8 +1,7 @@
-<div class="work-experience" *ngIf="jobPositionCardData$ | async as jobPositionCardData">
-    <ng-container *ngFor="let CardData of jobPositionCardData">
-        <app-job-position-card [jobPositionCardData]="CardData"></app-job-position-card>
-    </ng-container>
+<div class="work-experience" *ngIf="jobPositionsCardData">
+  <ng-container *ngFor="let cardData of jobPositionsCardData">
+    <app-job-position-card [data]="cardData"></app-job-position-card>
+  </ng-container>
 </div>
-
 
 <app-arrows-previous-next-section [arrowsText]="arrowsData"></app-arrows-previous-next-section>

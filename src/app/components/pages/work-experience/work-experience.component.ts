@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model';
-import { JobPositionData } from './job-position-card/job-position-card-data.model';
-import { MockWorkExperienceData } from './work-experience-mock';
+import { DataService } from 'src/app/data.service';
+import { tap } from 'rxjs/operators';
+import { JobPosition } from './job-position-data.model';
 
 @Component({
   selector: 'app-work-experience',
   templateUrl: './work-experience.component.html',
   styleUrls: ['./work-experience.component.scss'],
 })
-export class WorkExperienceComponent {
-  public jobPositionCardData$?: Observable<JobPositionData[]> = of(
-    MockWorkExperienceData
-  );
+export class WorkExperienceComponent implements OnInit {
+  public jobPositionsCardData: JobPosition[] | undefined;
 
   public arrowsData: PreviousNextArrows = {
     previousText: 'Homepage',
@@ -21,5 +20,19 @@ export class WorkExperienceComponent {
     routerLinkNext: '/education',
   };
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
+
+  ngOnInit(): void {
+    this.getJobs()
+  }
+
+  getJobs() {
+    this.dataService.getJobPositions().pipe(
+      tap(
+        response => {
+          this.jobPositionsCardData = response
+        }
+      )
+    ).subscribe();
+  }
 }

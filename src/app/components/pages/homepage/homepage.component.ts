@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model';
 import { DataService } from 'src/app/data.service';
 import { map, tap } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { User } from './homepage-data.model';
 
 @Component({
   selector: 'app-homepage',
@@ -12,26 +11,27 @@ import { Observable, of } from 'rxjs';
 })
 export class HomepageComponent implements OnInit {
   public arrowsData: PreviousNextArrows = {
-    // previousText: 'Previous',
-    // routerLinkPrevious: '/',
     nextText: 'Experience',
     routerLinkNext: '/work-experience',
   };
 
-  public data: any = {};
+  public users: User[] | undefined;
 
-  constructor(private dataService: DataService,
-    private http: HttpClient) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.data = this.getUsers()
-
+    this.getUsers();
   }
 
   getUsers() {
-    this.http.get('/api/data').subscribe((response) => {
-      this.data = response;
-      console.log(this.data);
-    });
+    this.dataService.getUsers().pipe(
+      tap(
+        response => {
+          this.users = response;
+        }
+      )
+    ).subscribe();
   }
+
+
 }
