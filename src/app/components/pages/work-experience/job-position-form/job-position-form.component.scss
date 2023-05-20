@@ -1,31 +1,62 @@
 .job-position-form__content {
+  padding-top: 1rem;
   z-index: 2;
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
   margin-bottom: 0;
-  // height: fit-content;
   height: 100%;
   overflow-y: auto;
-
   background-color: rgb(103, 239, 232);
   border: 3px solid rgb(32, 178, 170);
 
   &__head-line {
-    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid white;
 
     &__button-close {
-      margin-left: 1rem;
-      margin-right: 2rem;
+      background-color: rgb(32, 178, 170, 0.9);
+      border: 3px solid rgb(32, 178, 170);
+      font-size: 1rem;
+      color: transparent;
+      text-shadow: 0 0 0 white;
+
+      &:hover {
+        background-color: rgb(32, 178, 170, 0.5);
+      }
     }
 
     &__title {
-      font-size: 1rem;
+      color: rgb(21, 116, 111);
+      // margin-left: 1.25rem;
+      font-size: 1.5rem;
       margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    &__submit-button {
+      margin-top: 2rem;
+      text-align: center;
+      button {
+        width: 100%;
+      }
+    }
+
+    &__checkbox {
+      display: flex;
+      flex-flow: row;
+
+      &__input {
+        transform: scale(2);
+        margin-left: 0.5rem;
+      }
     }
   }
 }
@@ -38,7 +69,7 @@
   .job-position-form__content {
     height: fit-content;
     z-index: 2;
-    padding: 3rem 8rem;
+    padding: 2rem 6rem;
     margin: 0;
     top: 50%;
     position: fixed;
@@ -46,11 +77,34 @@
     transform: translate(-50%, -50%);
 
     &__head-line {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
       width: 30rem;
       justify-content: space-between;
 
       &__title {
+        padding-left: 0;
         font-size: 2rem;
+      }
+    }
+
+    &__form {
+      &__submit-button {
+        margin-top: 0;
+        text-align: right;
+        button {
+          width: 35%;
+        }
+      }
+
+      &__checkbox {
+        display: flex;
+        flex-flow: row;
+
+        &__input {
+          transform: scale(2);
+          margin-left: 0.5rem;
+        }
       }
     }
   }

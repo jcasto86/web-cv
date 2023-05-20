@@ -8,5 +8,5 @@ export interface JobPosition {
     endDate?: string;
     city: string;
     description: string;
-    remote: boolean;
+    remote?: boolean;
 }

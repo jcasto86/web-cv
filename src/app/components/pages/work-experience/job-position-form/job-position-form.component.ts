@@ -27,7 +27,7 @@ export class JobPositionFormComponent {
       endDate: [''],
       city: ['', Validators.required],
       description: ['', Validators.required],
-      remote: ['', Validators.required]
+      remote: [false]
     });
   }
 
