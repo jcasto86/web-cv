@@ -1,3 +1,17 @@
+.position-buttons {
+  display: flex;
+  justify-content: right;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+
+  button {
+    &:hover {
+      // transform: scale(1.1);
+      font-weight: bold;
+    }
+  }
+}
+
 .jumbotron {
   --background-color-with-opacity: rgb(32, 178, 170, 0.075);
 
