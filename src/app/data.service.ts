@@ -29,6 +29,12 @@ export class DataService {
         );
     }
 
+    deleteJobPositions(id: number) {
+        const url = `${this.baseUrl}/api/job-positions/${id}`;
+
+        this.http.delete(url).subscribe()
+    }
+
     // postJobPosition(jobPosition: JobPosition) {
     //     return this.http.post<JobPosition>(`${this.baseUrl}/api/job-positions`, jobPosition)
     // }

@@ -18,8 +18,6 @@ export class WorkExperienceComponent implements OnInit {
 
   public jobPositionsCardData: JobPosition[] | undefined;
 
-  // public isFormOpen: boolean = false;
-
   public isChildOpen = false;
 
   public arrowsData: PreviousNextArrows = {
