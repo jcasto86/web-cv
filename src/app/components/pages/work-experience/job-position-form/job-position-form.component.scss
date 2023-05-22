@@ -20,17 +20,17 @@
     align-items: center;
     border-bottom: 2px solid white;
 
-    &__button-close {
-      background-color: rgb(32, 178, 170, 0.9);
-      border: 3px solid rgb(32, 178, 170);
-      font-size: 1rem;
-      color: transparent;
-      text-shadow: 0 0 0 white;
+    // &__button-close {
+    //   background-color: rgb(32, 178, 170, 0.9);
+    //   border: 3px solid rgb(32, 178, 170);
+    //   font-size: 1rem;
+    //   color: transparent;
+    //   text-shadow: 0 0 0 white;
 
-      &:hover {
-        background-color: rgb(32, 178, 170, 0.5);
-      }
-    }
+    //   &:hover {
+    //     background-color: rgb(32, 178, 170, 0.5);
+    //   }
+    // }
 
     &__title {
       color: rgb(21, 116, 111);
@@ -52,10 +52,16 @@
     &__checkbox {
       display: flex;
       flex-flow: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      margin-top: 2rem;
 
-      &__input {
+      label {
+        margin-right: 1.5rem;
+      }
+
+      input {
         transform: scale(2);
-        margin-left: 0.5rem;
       }
     }
   }
@@ -89,21 +95,25 @@
     }
 
     &__form {
-      &__submit-button {
-        margin-top: 0;
-        text-align: right;
-        button {
-          width: 35%;
-        }
-      }
-
       &__checkbox {
         display: flex;
         flex-flow: row;
+        margin-top: unset;
 
-        &__input {
-          transform: scale(2);
-          margin-left: 0.5rem;
+        label {
+          margin-right: 5.125rem;
+        }
+
+        input {
+          transform: scale(2.5);
+        }
+      }
+
+      &__submit-button {
+        margin-top: 1rem;
+        text-align: right;
+        button {
+          width: 35%;
         }
       }
     }

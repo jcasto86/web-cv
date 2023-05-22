@@ -1,7 +1,7 @@
 <div class="job-position-form__content jumbotron">
   <div class="job-position-form__content__head-line">
     <button
-      class="job-position-form__content__head-line__button-close btn btn-primary"
+      class="job-position-form__content__head-line__button-close custom-button btn"
       (click)="close.emit()"
     >
       ✖
@@ -70,7 +70,7 @@
           <div class="col-sm-9">
             <input
               class="form-control"
-              type="date"
+              type="text"
               id="startDate"
               formControlName="startDate"
               required
@@ -80,7 +80,7 @@
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label" for="endDate">End Date</label>
           <div class="col-sm-9">
-            <input class="form-control" type="date" id="endDate" formControlName="endDate" />
+            <input class="form-control" type="text" id="endDate" formControlName="endDate" />
           </div>
         </div>
         <div class="mb-3 row">
@@ -100,15 +100,9 @@
             ></textarea>
           </div>
         </div>
-        <div class="job-position-form__content__form__checkbox mb-3 row">
-          <label class="col-sm-3" for="remote">Remote</label>
-          <div class="col-sm-9">
-            <input
-              class="job-position-form__content__form__checkbox__input"
-              type="checkbox"
-              formControlName="remote"
-            />
-          </div>
+        <div class="job-position-form__content__form__checkbox">
+          <label for="remote">Remote</label>
+          <input type="checkbox" formControlName="remote" />
         </div>
         <div class="job-position-form__content__form__submit-button">
           <button class="btn btn-secondary" type="submit" [disabled]="jobPositionForm.invalid">

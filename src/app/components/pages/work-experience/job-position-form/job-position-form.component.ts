@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { JobPosition } from '../job-position-data.model';
+import { DataService } from 'src/app/data.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-job-position-form',
@@ -17,7 +19,7 @@ export class JobPositionFormComponent {
 
   public jobPositionForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private dataService: DataService, private http: HttpClient) {
     this.jobPositionForm = this.formBuilder.group({
       logoHref: ['', Validators.required],
       logoSrc: ['', Validators.required],
@@ -49,6 +51,19 @@ export class JobPositionFormComponent {
 
       // Do something with the job position data, such as sending it to an API or processing it further.
       console.log(jobPosition);
+      // this.dataService.postJobPosition(this.jobPositionForm.value)
+
+
+      this.http.post('http://localhost:3000/api/job-positions', jobPosition).subscribe(
+        response => {
+          console.log('User inserted successfully');
+          // Handle success response if needed
+        },
+        error => {
+          console.error('Error inserting user:', error);
+          // Handle error response if needed
+        }
+      );
     }
   }
 
