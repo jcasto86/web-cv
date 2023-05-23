@@ -56,11 +56,11 @@ export class JobPositionFormComponent {
 
       this.http.post('http://localhost:3000/api/job-positions', jobPosition).subscribe(
         response => {
-          console.log('User inserted successfully');
+          console.log('Job Position inserted successfully --> RESPONSE', response);
           // Handle success response if needed
         },
         error => {
-          console.error('Error inserting user:', error);
+          console.error('Error inserting Job Position:', error);
           // Handle error response if needed
         }
       );
