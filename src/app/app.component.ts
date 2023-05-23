@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'web-cv';
+  public title = 'web-cv';
+  public router: Router;
+
+  constructor(private _router: Router) {
+    this.router = _router;
+  }
 }

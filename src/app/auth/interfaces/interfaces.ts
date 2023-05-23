@@ -12,16 +12,3 @@ export interface Usuario {
     name: string;
     email: string;
 }
-
-export interface JobPosition {
-    uid: string;
-    logoHref: string;
-    logoSrc: string;
-    logoAltText: string;
-    position: string;
-    startDate: Date;
-    endDate?: Date;
-    city: string;
-    remote: boolean;
-    description: string;
-}

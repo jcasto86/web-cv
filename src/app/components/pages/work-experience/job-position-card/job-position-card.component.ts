@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { JobPosition } from '../job-position-data.model';
+import { DataService } from 'src/app/data.service';
 
 
 @Component({
@@ -10,7 +11,12 @@ import { JobPosition } from '../job-position-data.model';
 export class JobPositionCardComponent implements OnInit {
   @Input() data?: JobPosition;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void { }
+
+  deleteJobPosition() {
+    if (this.data?.id)
+      this.dataService.deleteJobPositions(this.data?.id)
+  }
 }

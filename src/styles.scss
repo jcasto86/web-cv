@@ -2,3 +2,24 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+button.custom-button {
+  --custom-button-background-color: rgb(32, 178, 170, 0.9);
+  --custom-button-background-color-hover: rgb(32, 178, 170, 0.5);
+
+  --custom-button-border-color: rgb(32, 178, 170);
+
+  background-color: var(--custom-button-background-color);
+  border: 3px solid var(--custom-button-border-color);
+  font-size: 1rem;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+
+  &:hover {
+    background-color: var(--custom-button-background-color-hover);
+    border: 3px solid var(--custom-button-border-color);
+    color: transparent;
+    text-shadow: 0 0 0 white;
+    font-weight: bold;
+  }
+}
