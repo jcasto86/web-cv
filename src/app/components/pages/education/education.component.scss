@@ -1,6 +1,14 @@
 .education {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  &__header {
+    color: lightseagreen;
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

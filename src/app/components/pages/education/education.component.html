@@ -1,7 +1,14 @@
-<div class="education" *ngIf="educationCardData$ | async as educationCardData">
-  <ng-container *ngFor="let CardData of educationCardData">
-    <app-education-card [educationCardData]="CardData"></app-education-card>
-  </ng-container>
-</div>
+<section class="education">
+  <div class="education__header">
+    <h2 class="education__header__title">Education</h2>
+    <p class="education__header__subtitle">Insert description</p>
+  </div>
 
-<app-arrows-previous-next-section [arrowsText]="arrowsData"></app-arrows-previous-next-section>
+  <div class="education__cards" *ngIf="educationCardData$ | async as educationCardData">
+    <ng-container *ngFor="let CardData of educationCardData">
+      <app-education-card [educationCardData]="CardData"></app-education-card>
+    </ng-container>
+  </div>
+
+  <app-arrows-previous-next-section [arrowsText]="arrowsData"></app-arrows-previous-next-section>
+</section>

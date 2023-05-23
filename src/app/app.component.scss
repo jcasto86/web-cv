@@ -2,7 +2,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 1rem;
-  color: #333;
+  color: darkslategrey;
   //   box-sizing: border-box;
 }
 
@@ -14,9 +14,10 @@
   flex-direction: column;
   align-items: center;
 
-  // .router-outlet {
-  //   z-index: -1;
-  // }
+  app-header {
+    color: lightseagreen;
+    margin-bottom: 3.5rem;
+  }
 }
 
 /* Responsive Styles */

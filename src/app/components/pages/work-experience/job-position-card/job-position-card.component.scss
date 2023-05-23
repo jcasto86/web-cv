@@ -94,6 +94,12 @@
 
   .jumbotron {
     min-width: 40rem;
+
+    .position-logo {
+      img {
+        width: 5rem;
+      }
+    }
   }
 }
 

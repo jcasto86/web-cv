@@ -3,17 +3,11 @@
 
 <div class="content" role="main">
   <!-- HEADER -->
-  <app-header *ngIf="router.url == '/'"></app-header>
-
-  <br />
-  <br />
+  <app-header *ngIf="router.url == '/'">{{ router.url }}</app-header>
 
   <div class="router-outlet">
     <router-outlet></router-outlet>
   </div>
-
-  <br />
-  <br />
 </div>
 
 <!-- LINKS -->

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { JobPosition } from '../job-position-data.model';
 import { DataService } from 'src/app/data.service';
 
@@ -11,12 +11,22 @@ import { DataService } from 'src/app/data.service';
 export class JobPositionCardComponent implements OnInit {
   @Input() data?: JobPosition;
 
+  /**
+  * Edit Job Position event emitter.
+  */
+  @Output()
+  public editJobPosition: EventEmitter<void> = new EventEmitter<void>();
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void { }
 
   deleteJobPosition() {
     if (this.data?.id)
-      this.dataService.deleteJobPositions(this.data?.id)
+      this.dataService.deleteJobPosition(this.data?.id)
+  }
+
+  printThisJobPosition() {
+
   }
 }

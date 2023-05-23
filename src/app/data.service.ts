@@ -25,10 +25,15 @@ export class DataService {
         return this.http.get<JobPosition[]>(`${this.baseUrl}/api/job-positions`)
     }
 
-    deleteJobPositions(id: number) {
+    deleteJobPosition(id: number) {
         const url = `${this.baseUrl}/api/job-positions/${id}`;
 
         this.http.delete(url).subscribe()
+    }
+
+    updateJobPosition(jobPosition: JobPosition) {
+        console.log('Job Position selected to edit: ', jobPosition);
+        // return of([])
     }
 
     // postJobPosition(jobPosition: JobPosition) {
