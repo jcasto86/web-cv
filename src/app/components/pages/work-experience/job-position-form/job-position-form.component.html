@@ -2,7 +2,7 @@
   <div class="job-position-form__content__head-line">
     <button
       class="job-position-form__content__head-line__button-close custom-button btn"
-      (click)="close.emit()"
+      (click)="closeJobPositionFormModal.emit()"
     >
       ✖
     </button>
@@ -113,4 +113,4 @@
     </div>
   </div>
 </div>
-<app-backdrop (backdropCliked)="close.emit()"></app-backdrop>
+<app-backdrop (backdropCliked)="closeJobPositionFormModal.emit()"></app-backdrop>

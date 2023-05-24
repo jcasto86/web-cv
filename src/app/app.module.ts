@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -26,6 +26,7 @@ import { AddDataComponent } from './components/pages/add-data/add-data.component
 import { EducationCardComponent } from './components/pages/education/education-card/education-card.component';
 import { JobPositionFormComponent } from './components/pages/work-experience/job-position-form/job-position-form.component';
 import { BackdropComponent } from './components/parts/backdrop/backdrop.component';
+import { ConfirmDialogComponent } from './components/parts/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +48,9 @@ import { BackdropComponent } from './components/parts/backdrop/backdrop.componen
     AddDataComponent,
     JobPositionFormComponent,
     BackdropComponent,
+    ConfirmDialogComponent,
   ],
-  imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
+  imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, NgbModalModule],
   providers: [],
   bootstrap: [AppComponent],
 })

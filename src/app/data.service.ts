@@ -25,6 +25,19 @@ export class DataService {
         return this.http.get<JobPosition[]>(`${this.baseUrl}/api/job-positions`)
     }
 
+    postJobPosition(jobPosition: JobPosition) {
+        this.http.post(`${this.baseUrl}/api/job-positions`, jobPosition).subscribe(
+            response => {
+                console.log('Job Position inserted successfully --> RESPONSE', response);
+                // Handle success response if needed
+            },
+            error => {
+                console.error('Error inserting Job Position:', error);
+                // Handle error response if needed
+            }
+        );
+    }
+
     deleteJobPosition(id: number) {
         const url = `${this.baseUrl}/api/job-positions/${id}`;
 

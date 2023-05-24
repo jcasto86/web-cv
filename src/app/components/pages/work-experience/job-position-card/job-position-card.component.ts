@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { JobPosition } from '../job-position-data.model';
 import { DataService } from 'src/app/data.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmDialogComponent } from 'src/app/components/parts/confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -12,21 +14,34 @@ export class JobPositionCardComponent implements OnInit {
   @Input() data?: JobPosition;
 
   /**
+ * Delete address event emitter.
+ */
+  @Output()
+  public deleteJobPosition: EventEmitter<JobPosition> = new EventEmitter<JobPosition>();
+
+  /**
   * Edit Job Position event emitter.
   */
   @Output()
   public editJobPosition: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private modalService: NgbModal) { }
 
   ngOnInit(): void { }
 
-  deleteJobPosition() {
-    if (this.data?.id)
-      this.dataService.deleteJobPosition(this.data?.id)
-  }
+  // deleteJobPosition() {
+  //   if (this.data?.id)
+  //     this.dataService.deleteJobPosition(this.data?.id)
+  // }
 
-  printThisJobPosition() {
-
+  /**
+   * Function that opens confirm dialog. When its closed, subscribes to
+   * modal service and emits data to parent with address received.
+   */
+  public openDialog(): void {
+    const modalRef = this.modalService.open(ConfirmDialogComponent, { centered: true });
+    (modalRef.componentInstance as ConfirmDialogComponent).title =
+      `Are you sure you want to delete ${this.data?.position} position?`;
+    modalRef.closed.subscribe(data => this.deleteJobPosition.emit(data));
   }
 }

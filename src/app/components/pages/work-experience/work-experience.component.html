@@ -7,15 +7,22 @@
 <br />
 <b>{{ editMode }}</b>
 
-<app-job-position-form *ngIf="isFormModalOpen" (close)="closeFormModal()"></app-job-position-form>
+<app-job-position-form
+  *ngIf="isFormModalOpen"
+  [isEditMode]="editMode"
+  [jobPositionData]="currentJobPosition"
+  (closeJobPositionFormModal)="closeFormModal()"
+  (submitJobPosition)="editMode ? editJobPosition($event) : addJobPosition($event)"
+></app-job-position-form>
 <div class="work-experience__add-position-button">
   <button class="custom-button btn" (click)="openFormModal()">+ Add Job Position</button>
 </div>
-<div class="work-experience" *ngIf="jobPositionsCardData">
+<div class="work-experience" *ngIf="jobPositionsCardData$">
   <app-job-position-card
-    *ngFor="let cardData of jobPositionsCardData | async"
+    *ngFor="let cardData of jobPositionsCardData$ | async"
     [data]="cardData"
     (editJobPosition)="openEditJobPositionModal(cardData)"
+    (deleteJobPosition)="deleteJobPosition(cardData)"
   ></app-job-position-card>
 </div>
 

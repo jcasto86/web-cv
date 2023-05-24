@@ -1,0 +1,22 @@
+<section class="app-confirm-dialog">
+  <div class="app-confirm-dialog-close">
+    <button
+      (click)="activeModal.dismiss()"
+      class="app-confirm-dialog-close__button"
+      [attr.aria-label]="'close'"
+    >
+      <div>✖</div>
+    </button>
+  </div>
+  <div class="app-confirm-dialog-content">
+    <p *ngIf="title" class="app-confirm-dialog-content__title">
+      {{ title }}
+    </p>
+    <div class="app-confirm-dialog-content__buttons">
+      <button type="button" class="btn custom-button" (click)="activeModal.close()">confirm</button>
+      <button type="button" class="btn custom-button" (click)="activeModal.dismiss()">
+        cancel
+      </button>
+    </div>
+  </div>
+</section>
