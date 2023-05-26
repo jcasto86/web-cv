@@ -41,7 +41,7 @@ export class JobPositionCardComponent implements OnInit {
   public openDialog(): void {
     const modalRef = this.modalService.open(ConfirmDialogComponent, { centered: true });
     (modalRef.componentInstance as ConfirmDialogComponent).title =
-      `Are you sure you want to delete ${this.data?.position} position?`;
+      `You are deleting "${this.data?.position}" position.`;
     modalRef.closed.subscribe(data => this.deleteJobPosition.emit(data));
   }
 }

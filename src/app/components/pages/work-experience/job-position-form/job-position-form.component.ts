@@ -118,8 +118,8 @@ export class JobPositionFormComponent {
   constructor(
     private fb: FormBuilder,
     private formHelpers: FormHelperService,
-    private changeDetector: ChangeDetectorRef,
-    private dataService: DataService
+    // private changeDetector: ChangeDetectorRef,
+    // private dataService: DataService
   ) { }
 
   public ngOnChanges(changes: SimpleChanges): void {
@@ -133,25 +133,10 @@ export class JobPositionFormComponent {
   public onSubmit() {
     if (this.jobPositionForm.valid) {
       const jobPosition: JobPosition = this.jobPositionForm.value
-      // {
-      //   logoHref: this.jobPositionForm.value.logoHref,
-      //   logoSrc: this.jobPositionForm.value.logoSrc,
-      //   logoAltText: this.jobPositionForm.value.logoAltText,
-      //   position: this.jobPositionForm.value.position,
-      //   startDate: this.jobPositionForm.value.startDate,
-      //   endDate: this.jobPositionForm.value.endDate,
-      //   city: this.jobPositionForm.value.city,
-      //   description: this.jobPositionForm.value.description,
-      //   remote: this.jobPositionForm.value.remote
-      // }
-
       this.submitJobPosition.emit(this.jobPositionForm.value);
       this.jobPositionForm.reset();
-      this.closeJobPositionFormModal.emit();
       this.closeJobPositionForm();
       console.log(jobPosition);
-      //SI NO FUNCIONA EL POST REQUEST AL MOVERLO AL PADRE, VOLVER A USAR ESTO DE ABAJO
-      // this.dataService.postJobPosition(jobPosition)
     } else {
       this.formHelpers.validateAllFormFields(this.jobPositionForm);
     };
@@ -168,8 +153,4 @@ export class JobPositionFormComponent {
     this.jobPositionForm.markAsPristine();
     this.jobPositionForm.markAsUntouched();
   }
-
-  // public addNewItem(value: boolean) {
-  //   this.newItemEvent.emit(value);
-  // }
 }

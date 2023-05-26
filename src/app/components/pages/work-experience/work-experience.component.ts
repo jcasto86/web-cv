@@ -91,19 +91,14 @@ export class WorkExperienceComponent implements OnDestroy {
    * @param jobPosition 
    */
   public editJobPosition(jobPosition: JobPosition): void {
-    // this.subscriptions.add(
-    //   // this.userAddressBookService.update(address).subscribe(() => {
-    //   //   this.service.loadAddresses();
-    //   //   this.activeCartService.reloadActiveCart();
-    //   // })
-    //   this.dataService.updateJobPosition(jobPosition).subscribe()
-    // );
+    this.dataService.editJobPosition(jobPosition)
+    this.jobPositionsCardData$ = this.dataService.getJobPositions()
+
   }
 
   public deleteJobPosition(jobPosition: JobPosition) {
     if (jobPosition.id) {
       this.dataService.deleteJobPosition(jobPosition.id)
-
       this.jobPositionsCardData$ = this.dataService.getJobPositions()
     }
 

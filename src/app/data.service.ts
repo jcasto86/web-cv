@@ -40,11 +40,30 @@ export class DataService {
 
     deleteJobPosition(id: number) {
         const url = `${this.baseUrl}/api/job-positions/${id}`;
-
-        this.http.delete(url).subscribe()
+        this.http.delete(url).subscribe(
+            () => {
+                console.log('Job Position deleted successfully!');
+                // Handle any success actions here
+            },
+            error => {
+                console.log('An error occurred while deleting Job Position:', error);
+                // Handle any error actions here
+            }
+        )
     }
 
-    updateJobPosition(jobPosition: JobPosition) {
+    editJobPosition(jobPosition: JobPosition) {
+        const url = `${this.baseUrl}/api/job-positions/${jobPosition.id}`;
+        this.http.put(url, jobPosition).subscribe(
+            () => {
+                console.log('Row updated successfully!');
+                // Handle any success actions here
+            },
+            error => {
+                console.log('An error occurred while updating the row:', error);
+                // Handle any error actions here
+            }
+        )
         console.log('Job Position selected to edit: ', jobPosition);
         // return of([])
     }

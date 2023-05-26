@@ -10,11 +10,23 @@
   </div>
   <div class="app-confirm-dialog-content">
     <p *ngIf="title" class="app-confirm-dialog-content__title">
+      <b style="color: red"> WARNING! </b> <br /><br />
       {{ title }}
     </p>
+    <br />
     <div class="app-confirm-dialog-content__buttons">
-      <button type="button" class="btn custom-button" (click)="activeModal.close()">confirm</button>
-      <button type="button" class="btn custom-button" (click)="activeModal.dismiss()">
+      <button
+        type="button"
+        class="app-confirm-dialog-content__buttons__confirm btn custom-button"
+        (click)="activeModal.close()"
+      >
+        confirm
+      </button>
+      <button
+        type="button"
+        class="app-confirm-dialog-content__buttons__cancel btn custom-button"
+        (click)="activeModal.dismiss()"
+      >
         cancel
       </button>
     </div>
