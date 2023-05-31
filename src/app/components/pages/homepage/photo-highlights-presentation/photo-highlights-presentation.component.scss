@@ -34,3 +34,49 @@
     }
   }
 }
+
+@media (max-width: 950px) {
+  .app-photo-highlights-presentation {
+    // padding-bottom: 5rem;
+
+    &__container {
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: space-around;
+
+      flex-direction: column-reverse;
+
+      &__text-block {
+        margin-bottom: 3rem;
+      }
+
+      &__photo {
+        margin-right: 10vw;
+        margin-left: 10vw;
+      }
+
+      &__text-block {
+        // display: flex;
+        // flex-direction: column;
+        // align-self: center;
+
+        &__name {
+          // padding-bottom: 2rem;
+        }
+
+        &__highlights {
+          &:not(:last-child) {
+            // margin-bottom: 0.75rem;
+          }
+
+          h6 {
+            // margin-bottom: unset;
+          }
+          p {
+            // margin-bottom: unset;
+          }
+        }
+      }
+    }
+  }
+}
