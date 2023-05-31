@@ -1,3 +1,10 @@
 .header {
   text-align: center;
 }
+
+@media (max-width: 950px) {
+  .header {
+    padding-bottom: 3rem;
+    border-bottom: 3px double rgba(32, 178, 171, 0.6);
+  }
+}

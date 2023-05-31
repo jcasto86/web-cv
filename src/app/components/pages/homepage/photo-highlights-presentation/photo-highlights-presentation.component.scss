@@ -4,10 +4,10 @@
   &__container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 
     &__photo {
-      margin-right: 5rem;
+      margin-right: 7rem;
     }
 
     &__text-block {

@@ -6,7 +6,8 @@ import { MockHomepageData } from '../homepage-mock';
 @Component({
   selector: 'app-photo-highlights-presentation',
   templateUrl: './photo-highlights-presentation.component.html',
-  styleUrls: ['./photo-highlights-presentation.component.scss']
+  styleUrls: ['./photo-highlights-presentation.component.scss'],
+  host: { class: 'app-photo-highlights-presentation' }
 })
 export class PhotoHighlightsPresentationComponent implements OnInit {
 
