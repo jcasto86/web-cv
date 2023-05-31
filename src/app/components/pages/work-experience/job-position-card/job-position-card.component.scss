@@ -36,16 +36,16 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
+
     img {
       max-width: 6rem;
+      height: fit-content;
     }
 
     &__text {
+      margin-right: 1.5rem;
       color: lightseagreen;
-    }
-
-    img {
-      height: fit-content;
+      font-size: 1.25rem;
     }
   }
 
@@ -98,6 +98,10 @@
     .position-logo {
       img {
         width: 5rem;
+      }
+
+      &__text {
+        font-size: 1.75rem;
       }
     }
   }
