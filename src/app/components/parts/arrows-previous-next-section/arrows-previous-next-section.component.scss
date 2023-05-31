@@ -14,9 +14,9 @@
     font-weight: 600;
 
     &.btn-outline-secondary {
-    // color: rgb(108, 117, 125);
-    // border-color: #6c757d;
-    background-color: var(--background-grey-color-with-opacity);
+      // color: rgb(108, 117, 125);
+      // border-color: #6c757d;
+      background-color: var(--background-grey-color-with-opacity);
 
       &:hover {
         color: white;
@@ -32,6 +32,22 @@
       &:hover {
         color: white;
         background-color: lightseagreen;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .arrows-previous-next-section {
+    // justify-content: space-between;
+
+    button {
+      width: 7.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+
+      & span {
+        // display: none;
       }
     }
   }

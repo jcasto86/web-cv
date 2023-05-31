@@ -5,14 +5,16 @@
       routerLink="{{ arrowsText.routerLinkPrevious }}"
       class="previousArrow btn btn-outline-secondary"
     >
-      << {{ arrowsText.previousText }}
+      <<
+      <span>{{ arrowsText.previousText }}</span>
     </button>
     <button
       routerLink="{{ arrowsText.routerLinkNext }}"
       *ngIf="arrowsText.nextText"
       class="nextArrow btn btn-outline-dark"
     >
-      {{ arrowsText.nextText }} >>
+      <span>{{ arrowsText.nextText }}</span>
+      >>
     </button>
   </section>
 </ng-container>
