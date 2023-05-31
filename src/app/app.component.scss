@@ -6,6 +6,10 @@
   //   box-sizing: border-box;
 }
 
+app-toolbar {
+  display: none;
+}
+
 .content {
   display: flex;
   margin: 100px auto 32px;
@@ -20,9 +24,12 @@
   }
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 767px) {
-}
+@media (min-width: 992px) {
+  app-toolbar {
+    display: block;
+  }
 
-@media screen and (max-width: 575px) {
+  app-toolbar-mobile {
+    display: none;
+  }
 }

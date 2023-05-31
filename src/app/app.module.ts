@@ -27,6 +27,8 @@ import { EducationCardComponent } from './components/pages/education/education-c
 import { JobPositionFormComponent } from './components/pages/work-experience/job-position-form/job-position-form.component';
 import { BackdropComponent } from './components/parts/backdrop/backdrop.component';
 import { ConfirmDialogComponent } from './components/parts/confirm-dialog/confirm-dialog.component';
+import { ToolbarMobileComponent } from './components/shared/toolbar-mobile/toolbar-mobile.component';
+import { HamburgerNavigationComponent } from './components/shared/toolbar-mobile/hamburger-navigation/hamburger-navigation.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { ConfirmDialogComponent } from './components/parts/confirm-dialog/confir
     JobPositionFormComponent,
     BackdropComponent,
     ConfirmDialogComponent,
+    ToolbarMobileComponent,
+    HamburgerNavigationComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, NgbModalModule],
   providers: [],

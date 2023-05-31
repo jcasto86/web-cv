@@ -1,0 +1,15 @@
+<div class="toolbar-mobile" role="banner">
+  <app-hamburger-navigation
+    *ngIf="isModalOpen"
+    (closeJobPositionFormModal)="closeFormModal()"
+  ></app-hamburger-navigation>
+
+  <button
+    class="toolbar-mobile__hamburger"
+    id="hamburger"
+    title="hamburger"
+    (click)="isModalOpen = true"
+  >
+    <div class="toolbar-mobile__hamburger__icon">{{ isModalOpen ? '⋮' : '☰' }}</div>
+  </button>
+</div>

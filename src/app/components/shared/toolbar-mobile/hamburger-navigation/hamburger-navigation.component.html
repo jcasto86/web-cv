@@ -1,0 +1,83 @@
+<div class="hamburger-navigation-modal jumbotron">
+  <div class="hamburger-navigation-modal__head-line">
+    <button
+      class="hamburger-navigation-modal__head-line__button-close custom-button btn"
+      (click)="closeJobPositionFormModal.emit()"
+    >
+      ✖
+    </button>
+    <h1 class="hamburger-navigation-modal__head-line__title">Navigation Menu</h1>
+  </div>
+
+  <div class="hamburger-navigation-modal__content">
+    <button
+      (click)="closeJobPositionFormModal.emit()"
+      routerLink="/"
+      class="toolbar__home"
+      routerLinkActive="selected-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      HOME
+    </button>
+    <button
+      (click)="closeJobPositionFormModal.emit()"
+      routerLink="/work-experience"
+      class="toolbar__work-experience"
+      routerLinkActive="selected-link"
+    >
+      EXPERIENCE
+    </button>
+    <button
+      (click)="closeJobPositionFormModal.emit()"
+      routerLink="/education"
+      class="toolbar__education"
+      routerLinkActive="selected-link"
+    >
+      EDUCATION
+    </button>
+    <button
+      (click)="closeJobPositionFormModal.emit()"
+      routerLink="/skills"
+      class="toolbar__skills"
+      routerLinkActive="selected-link"
+    >
+      SKILLS
+    </button>
+    <button
+      (click)="closeJobPositionFormModal.emit()"
+      routerLink="/voluntary-work"
+      class="toolbar__voluntary-work"
+      routerLinkActive="selected-link"
+    >
+      VOLUNTEERING
+    </button>
+    <button
+      (click)="closeJobPositionFormModal.emit()"
+      routerLink="/contact"
+      class="toolbar__contact"
+      routerLinkActive="selected-link"
+    >
+      CONTACT
+    </button>
+  </div>
+
+  <div class="hamburger-navigation-modal__bottom-line">
+    <button
+      (click)="closeJobPositionFormModal.emit()"
+      routerLink="/auth/login"
+      class="toolbar__login"
+      routerLinkActive="selected-link"
+    >
+      Login
+    </button>
+    <button
+      (click)="closeJobPositionFormModal.emit()"
+      routerLink="/auth/register"
+      class="toolbar__register"
+      routerLinkActive="selected-link"
+    >
+      Register
+    </button>
+  </div>
+</div>
+<app-backdrop (backdropCliked)="closeJobPositionFormModal.emit()"></app-backdrop>

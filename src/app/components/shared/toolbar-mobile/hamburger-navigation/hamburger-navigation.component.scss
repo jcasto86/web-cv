@@ -1,0 +1,89 @@
+.hamburger-navigation-modal {
+  width: 80%;
+  padding-top: 1rem;
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 0;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgb(103, 239, 232);
+  border: 3px solid rgb(32, 178, 170);
+
+  &__head-line {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid white;
+
+    &__title {
+      color: rgb(21, 116, 111);
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    button {
+      font-size: 1.5rem;
+      font-weight: 500;
+      background-color: unset;
+      color: white;
+      border-color: transparent;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem;
+
+      &:hover,
+      &.selected-link {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__bottom-line {
+    border-top: 2px solid white;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    transform: translateX(-20%);
+
+    button {
+      font-size: 1.5rem;
+      font-weight: 500;
+      background-color: unset;
+      color: white;
+      border-color: transparent;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem;
+
+      &:first-child {
+        margin-right: 2.5rem;
+      }
+
+      &:hover,
+      &.selected-link {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.app-backdrop {
+  --app-backdrop-background-color: rgb(207, 252, 250);
+}
+
+@media (min-width: 560px) {
+  .hamburger-navigation-modal {
+    width: 50%;
+  }
+}

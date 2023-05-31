@@ -1,0 +1,25 @@
+.toolbar-mobile {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5rem;
+  display: flex;
+  justify-content: right;
+  background-color: lightseagreen;
+
+  &__hamburger {
+    // transform: scale(1.5);
+    padding: 0.5rem;
+    background-color: unset;
+    color: white;
+    margin-right: 0.5rem;
+    border-color: transparent;
+    height: 100%;
+
+    &__icon {
+      font-size: 1.5rem;
+    }
+  }
+}
