@@ -13,7 +13,4 @@ export class HamburgerNavigationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-
 }

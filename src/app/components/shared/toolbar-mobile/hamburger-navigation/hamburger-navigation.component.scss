@@ -1,6 +1,7 @@
 .hamburger-navigation-modal {
+  border-radius: 0.3rem;
   width: 80%;
-  padding-top: 1rem;
+  // padding-top: 1rem;
   z-index: 2;
   position: fixed;
   left: 0;
@@ -11,37 +12,43 @@
   overflow-y: auto;
   background-color: rgb(103, 239, 232);
   border: 3px solid rgb(32, 178, 170);
+  display: flex;
+  flex-direction: column;
 
   &__head-line {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid white;
+    // border-bottom: 2px solid rgb(58, 198, 191);
+    background-color: white;
 
     &__title {
       color: rgb(21, 116, 111);
-      font-size: 1.5rem;
+      font-size: 1.375rem;
       margin-bottom: 0;
     }
   }
 
   &__content {
-    margin-top: 3rem;
+    margin: 2rem auto auto 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
     button {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 500;
       background-color: unset;
       color: white;
       border-color: transparent;
       margin-bottom: 1.5rem;
       padding: 0.5rem;
+
+      // text-shadow: 0 0 5px rgb(0, 89, 85); /* horizontal-offset vertical-offset 'blur' colour */
+      // -moz-text-shadow: 0 0 5px rgb(0, 89, 85);
+      // -webkit-text-shadow: 0 0 5px rgb(0, 89, 85);
 
       &:hover,
       &.selected-link {
@@ -51,20 +58,30 @@
   }
 
   &__bottom-line {
-    border-top: 2px solid white;
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    transform: translateX(-20%);
+    // border-top: 2px solid white;
+    // position: absolute;
+    // bottom: 0;
+    // left: 25%;
+    // transform: translateX(-20%);
+
+    padding: 1rem 0.5rem;
+    margin-top: auto;
+    width: 100%;
+    height: 3rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
     button {
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 500;
       background-color: unset;
-      color: white;
+      color: rgb(21, 116, 111);
+
       border-color: transparent;
-      margin-bottom: 1.5rem;
-      padding: 0.5rem;
+      // margin-bottom: 1.5rem;
 
       &:first-child {
         margin-right: 2.5rem;

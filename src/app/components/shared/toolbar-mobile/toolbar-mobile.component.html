@@ -1,5 +1,6 @@
 <div class="toolbar-mobile" role="banner">
   <app-hamburger-navigation
+    [@popupAnimation]="isModalOpen ? 'open' : 'closed'"
     *ngIf="isModalOpen"
     (closeJobPositionFormModal)="closeFormModal()"
   ></app-hamburger-navigation>
