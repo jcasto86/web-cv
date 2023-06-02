@@ -1,6 +1,5 @@
 .homepage {
   text-align: center;
-  width: 100vw;
 
   .app-photo-highlights-presentation {
     padding-bottom: 3rem;
@@ -15,7 +14,24 @@
     &__title,
     &__description {
       text-align: center;
-      width: 80vw;
+      max-width: 70vw;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .homepage {
+    width: 95vw;
+
+    &__about-me {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__title,
+      &__description {
+        max-width: 85vw;
+      }
     }
   }
 }

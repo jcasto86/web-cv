@@ -1,4 +1,35 @@
 .skills {
+  height: 30vh;
+  width: 60vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &__hard,
+  &__soft {
+    width: 100%;
+    text-align: -webkit-center;
+  }
+
+  &__hard__title,
+  &__soft__title {
+    width: 100%;
+
+    margin-bottom: 1.5rem;
+  }
+
+  &__hard__list,
+  &__soft__list {
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
   &__header {
     color: lightseagreen;
     text-align: center;
