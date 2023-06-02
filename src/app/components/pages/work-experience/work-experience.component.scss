@@ -1,4 +1,6 @@
 .work-experience {
+  margin-top: 3rem;
+
   &__header {
     color: lightseagreen;
     text-align: center;
@@ -12,4 +14,8 @@
     // button {
     // }
   }
+}
+
+app-job-position-card {
+  margin-bottom: 3rem;
 }

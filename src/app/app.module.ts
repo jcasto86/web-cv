@@ -29,6 +29,7 @@ import { BackdropComponent } from './components/parts/backdrop/backdrop.componen
 import { ConfirmDialogComponent } from './components/parts/confirm-dialog/confirm-dialog.component';
 import { ToolbarMobileComponent } from './components/shared/toolbar-mobile/toolbar-mobile.component';
 import { HamburgerNavigationComponent } from './components/shared/toolbar-mobile/hamburger-navigation/hamburger-navigation.component';
+import { EmailSentThankYouComponent } from './components/pages/contact/email-sent-thank-you/email-sent-thank-you.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { HamburgerNavigationComponent } from './components/shared/toolbar-mobile
     ConfirmDialogComponent,
     ToolbarMobileComponent,
     HamburgerNavigationComponent,
+    EmailSentThankYouComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, NgbModalModule],
   providers: [],
