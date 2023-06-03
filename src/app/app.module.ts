@@ -30,6 +30,7 @@ import { ConfirmDialogComponent } from './components/parts/confirm-dialog/confir
 import { ToolbarMobileComponent } from './components/shared/toolbar-mobile/toolbar-mobile.component';
 import { HamburgerNavigationComponent } from './components/shared/toolbar-mobile/hamburger-navigation/hamburger-navigation.component';
 import { EmailSentThankYouComponent } from './components/pages/contact/email-sent-thank-you/email-sent-thank-you.component';
+import { SkillsFormComponent } from './components/pages/skills/skills-form/skills-form.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { EmailSentThankYouComponent } from './components/pages/contact/email-sen
     ToolbarMobileComponent,
     HamburgerNavigationComponent,
     EmailSentThankYouComponent,
+    SkillsFormComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, NgbModalModule],
   providers: [],

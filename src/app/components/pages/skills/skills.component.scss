@@ -1,39 +1,56 @@
 .skills {
   height: 30vh;
-  width: 60vw;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 15rem;
-
-  &__hard,
-  &__soft {
-    width: 100%;
-    text-align: -webkit-center;
-  }
-
-  &__hard__title,
-  &__soft__title {
-    width: 100%;
-
-    margin-bottom: 1.5rem;
-  }
-
-  &__hard__list,
-  &__soft__list {
-    text-align: center;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-  }
+  text-align: -webkit-center;
 
   &__header {
     color: lightseagreen;
     text-align: center;
     margin-bottom: 3.5rem;
+  }
+
+  &__container {
+    height: 100%;
+    width: 60vw;
+    text-align: center;
+
+    &__list {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      // text-align: center;
+      // width: 100%;
+      // display: flex;
+      // flex-direction: row;
+      // align-items: center;
+      // justify-content: space-around;
+    }
+  }
+}
+
+app-skills-form {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .skills {
+    &__container {
+      height: 100%;
+      width: 60vw;
+      text-align: center;
+
+      &__list {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        // text-align: center;
+        // width: 100%;
+        // display: flex;
+        // flex-direction: row;
+        // align-items: center;
+        // justify-content: space-around;
+      }
+    }
   }
 }

@@ -1,0 +1,10 @@
+<section class="skills-form">
+  <ng-container *ngIf="!isFormOpen; else showForm">
+    <button (click)="toogle()">Add new Skill!</button>
+  </ng-container>
+
+  <ng-template #showForm>
+    <button (click)="toogle()">Close form</button>
+    <h3>FORM</h3>
+  </ng-template>
+</section>
