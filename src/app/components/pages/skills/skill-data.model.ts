@@ -1,8 +1,8 @@
 export interface Skill {
     id?: number;
-    logoHref: string;
-    logoSrc: string;
-    logoAltText: string;
+    href: string;
+    src: string;
+    altText: string;
     title: string;
     certificate?: string
 }

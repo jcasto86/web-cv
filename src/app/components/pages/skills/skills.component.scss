@@ -1,5 +1,5 @@
 .skills {
-  height: 30vh;
+  height: 25vh;
   text-align: -webkit-center;
 
   &__header {
@@ -25,6 +25,15 @@
       // flex-direction: row;
       // align-items: center;
       // justify-content: space-around;
+
+      &__card {
+        display: flex;
+        flex-direction: column;
+
+        &__img-container img {
+          width: 10rem;
+        }
+      }
     }
   }
 }

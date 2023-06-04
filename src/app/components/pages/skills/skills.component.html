@@ -9,8 +9,15 @@
   <div class="skills__container">
     <ng-container *ngIf="skillsList">
       <div class="skills__container__list">
-        <div *ngFor="let skill of skillsList">
-          {{ skill | json }}
+        <div class="skills__container__list__card" *ngFor="let skill of skillsList">
+          <h4>{{ skill.title }}</h4>
+          <a
+            class="skills__container__list__card__img-container"
+            [href]="skill.href"
+            target="_blank"
+          >
+            <img [src]="skill.src" [alt]="skill.altText" />
+          </a>
         </div>
       </div>
     </ng-container>

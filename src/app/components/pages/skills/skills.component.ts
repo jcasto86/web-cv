@@ -20,8 +20,8 @@ export class SkillsComponent implements OnInit {
 
   constructor() {
     this.skillsList = [
-      { logoHref: 'https://angular.io/', logoSrc: 'https://anthoncode.com/wp-content/uploads/2019/01/angular-logo-png.png', logoAltText: 'Angular', title: 'Angular', certificate: 'https://3f9712d4-5d14-424a-845f-5368c041d9a2.filesusr.com/ugd/0e1495_d65bc918846f40fc82a089d2eca63fb2.pdf' },
-      { logoHref: 'https://angular.io/', logoSrc: 'https://anthoncode.com/wp-content/uploads/2019/01/angular-logo-png.png', logoAltText: 'Angular', title: 'Angular', certificate: 'https://3f9712d4-5d14-424a-845f-5368c041d9a2.filesusr.com/ugd/0e1495_d65bc918846f40fc82a089d2eca63fb2.pdf' },
+      { href: 'https://angular.io/', src: 'https://docs.angular.lat/assets/images/logos/angular/angular.png', altText: 'Angular', title: 'Angular', certificate: 'https://3f9712d4-5d14-424a-845f-5368c041d9a2.filesusr.com/ugd/0e1495_d65bc918846f40fc82a089d2eca63fb2.pdf' },
+      { href: 'https://angular.io/', src: 'https://docs.angular.lat/assets/images/logos/angular/angular.png', altText: 'Angular', title: 'Angular', certificate: 'https://3f9712d4-5d14-424a-845f-5368c041d9a2.filesusr.com/ugd/0e1495_d65bc918846f40fc82a089d2eca63fb2.pdf' },
     ]
   }
 
