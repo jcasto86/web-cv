@@ -7,13 +7,13 @@
 
 <section class="skills">
   <div class="skills__container">
-    <div class="skills__container__list">
-      <p>😋</p>
-      <p>😋</p>
-      <p>😋</p>
-      <p>😋</p>
-      <p>😋</p>
-    </div>
+    <ng-container *ngIf="skillsList">
+      <div class="skills__container__list">
+        <div *ngFor="let skill of skillsList">
+          {{ skill | json }}
+        </div>
+      </div>
+    </ng-container>
   </div>
 </section>
 
