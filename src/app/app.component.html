@@ -1,21 +1,20 @@
 <!-- Toolbar -->
-<div>
-  <!-- url('/assets/images/background-img.png'); -->
-  <app-toolbar></app-toolbar>
-  <app-toolbar-mobile></app-toolbar-mobile>
 
-  <div class="content" role="main">
-    <!-- HEADER -->
-    <app-header *ngIf="router.url == '/'">{{ router.url }}</app-header>
+<!-- url('/assets/images/background-img.png'); -->
+<app-toolbar></app-toolbar>
+<app-toolbar-mobile></app-toolbar-mobile>
 
-    <div class="router-outlet">
-      <router-outlet></router-outlet>
-    </div>
+<div class="content" role="main">
+  <!-- HEADER -->
+  <app-header *ngIf="router.url == '/'">{{ router.url }}</app-header>
+
+  <div class="router-outlet">
+    <router-outlet></router-outlet>
   </div>
-
-  <!-- LINKS -->
-  <app-links></app-links>
-
-  <!-- FOOTER -->
-  <app-footer></app-footer>
 </div>
+
+<!-- LINKS -->
+<app-links></app-links>
+
+<!-- FOOTER -->
+<app-footer></app-footer>
