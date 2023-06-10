@@ -21,7 +21,9 @@ export class SkillsFormComponent implements OnChanges {
   /**
  * Emits the Job Position
  */
-  @Output() public submitSkill = new EventEmitter<Skill>();
+  @Output() public submitSkill: EventEmitter<Skill> = new EventEmitter<Skill>();
+
+
 
   public isFormOpen: boolean = false;
 

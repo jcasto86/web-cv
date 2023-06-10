@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './components/pages/homepage/homepage-data.model';
 import { JobPosition } from './components/pages/work-experience/job-position-data.model';
+import { Skill } from './components/pages/skills/skill-data.model';
 
 @Injectable({
     providedIn: 'root'
@@ -12,6 +13,8 @@ export class DataService {
 
     constructor(private http: HttpClient) { }
 
+    /// **** USERS ****
+
     getUsers(): Observable<User[]> {
         return this.http.get<User[]>(`${this.baseUrl}/api/users`).pipe(
         );
@@ -20,6 +23,8 @@ export class DataService {
     postUser(data: any) {
         this.http.post(`${this.baseUrl}/api/users`, data)
     }
+
+    /// **** JOB POSITIONS ****
 
     getJobPositions(): Observable<JobPosition[]> {
         return this.http.get<JobPosition[]>(`${this.baseUrl}/api/job-positions`)
@@ -60,7 +65,7 @@ export class DataService {
                 // Handle any success actions here
             },
             error => {
-                console.log('An error occurred while updating the row:', error);
+                console.log('An error occurred while updating the Job Position: ', error);
                 // Handle any error actions here
             }
         )
@@ -68,20 +73,57 @@ export class DataService {
         // return of([])
     }
 
-    // postJobPosition(jobPosition: JobPosition) {
-    //     return this.http.post<JobPosition>(`${this.baseUrl}/api/job-positions`, jobPosition)
-    // }
+    /// TODO: **** EDUCATION ****
 
-    // postJobPosition(jobPosition: JobPosition): Observable<JobPosition> {
-    //     return this.http.post<JobPosition>(`${this.baseUrl}/api/job-positions`, jobPosition)
-    // }
 
-    // addHero(hero: Hero): Observable<Hero> {
-    //     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
-    //         .pipe(
-    //             catchError(this.handleError('addHero', hero))
-    //         );
-    // }
+    /// **** SKILLS ****
+
+    getSkills(): Observable<Skill[]> {
+        return this.http.get<Skill[]>(`${this.baseUrl}/api/skills`)
+    }
+
+    postSkills(skill: Skill) {
+        this.http.post(`${this.baseUrl}/api/skills`, skill).subscribe(
+            response => {
+                console.log('Skill inserted successfully --> RESPONSE', response);
+                // Handle success response if needed
+            },
+            error => {
+                console.error('Error inserting Skill: ', error);
+                // Handle error response if needed
+            }
+        );
+    }
+
+    deleteSkills(id: number) {
+        const url = `${this.baseUrl}/api/skills/${id}`;
+        this.http.delete(url).subscribe(
+            () => {
+                console.log('Skill deleted successfully!');
+                // Handle any success actions here
+            },
+            error => {
+                console.log('An error occurred while deleting Skill: ', error);
+                // Handle any error actions here
+            }
+        )
+    }
+
+    editSkills(skill: Skill) {
+        const url = `${this.baseUrl}/api/job-positions/${skill.id}`;
+        this.http.put(url, skill).subscribe(
+            () => {
+                console.log('Skill updated successfully!');
+                // Handle any success actions here
+            },
+            error => {
+                console.log('An error occurred while updating the Skill: ', error);
+                // Handle any error actions here
+            }
+        )
+        console.log('Skill selected to edit: ', skill);
+        // return of([])
+    }
 
 
 }

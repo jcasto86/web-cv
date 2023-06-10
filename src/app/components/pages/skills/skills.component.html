@@ -3,15 +3,13 @@
   <p class="skills__header__subtitle">Insert description</p>
 </div>
 
-<app-skills-form (submitSkill)="dime($event)"></app-skills-form>
-
-<h1>{{ skillsList | json }}</h1>
+<app-skills-form (submitSkill)="($event)"></app-skills-form>
 
 <section class="skills">
   <div class="skills__container">
-    <ng-container *ngIf="skillsList">
+    <ng-container *ngIf="skillsList$">
       <div class="skills__container__list">
-        <div class="skills__container__list__card" *ngFor="let skill of skillsList">
+        <div class="skills__container__list__card" *ngFor="let skill of skillsList$ | async">
           <h4>{{ skill.title }}</h4>
           <a
             class="skills__container__list__card__img-container"
