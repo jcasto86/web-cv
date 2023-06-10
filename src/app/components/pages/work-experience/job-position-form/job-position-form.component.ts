@@ -17,7 +17,7 @@ export class JobPositionFormComponent {
   /**
    * Job Position Data received from the parent component.
    */
-  @Input() jobPositionData?: JobPosition;
+  @Input() public jobPositionData?: JobPosition;
 
   /**
    * Data received from the parent component.

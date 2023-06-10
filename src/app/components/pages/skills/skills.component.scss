@@ -1,5 +1,4 @@
 .skills {
-  height: 25vh;
   text-align: -webkit-center;
 
   &__header {
@@ -19,12 +18,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      // text-align: center;
-      // width: 100%;
-      // display: flex;
-      // flex-direction: row;
-      // align-items: center;
-      // justify-content: space-around;
+      gap: 4rem;
+      flex-wrap: wrap;
 
       &__card {
         display: flex;
@@ -53,12 +48,6 @@ app-skills-form {
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        // text-align: center;
-        // width: 100%;
-        // display: flex;
-        // flex-direction: row;
-        // align-items: center;
-        // justify-content: space-around;
       }
     }
   }
