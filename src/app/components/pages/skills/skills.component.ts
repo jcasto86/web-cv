@@ -46,6 +46,14 @@ export class SkillsComponent implements OnDestroy {
 
   }
 
+  /**
+ * Add new Skill
+ * @param skill 
+ */
+  public addSkill(skill: Skill): void {
+    this.dataService.postSkill(skill);
+    this.skillsList$ = this.dataService.getSkills()
+  }
 
   public ngOnDestroy(): void {
     this.subscriptions.unsubscribe();

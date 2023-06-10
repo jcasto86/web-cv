@@ -82,7 +82,7 @@ export class DataService {
         return this.http.get<Skill[]>(`${this.baseUrl}/api/skills`)
     }
 
-    postSkills(skill: Skill) {
+    postSkill(skill: Skill) {
         this.http.post(`${this.baseUrl}/api/skills`, skill).subscribe(
             response => {
                 console.log('Skill inserted successfully --> RESPONSE', response);
@@ -95,7 +95,7 @@ export class DataService {
         );
     }
 
-    deleteSkills(id: number) {
+    deleteSkill(id: number) {
         const url = `${this.baseUrl}/api/skills/${id}`;
         this.http.delete(url).subscribe(
             () => {
@@ -109,7 +109,7 @@ export class DataService {
         )
     }
 
-    editSkills(skill: Skill) {
+    editSkill(skill: Skill) {
         const url = `${this.baseUrl}/api/job-positions/${skill.id}`;
         this.http.put(url, skill).subscribe(
             () => {
