@@ -65,11 +65,7 @@ export class SkillsComponent implements OnDestroy {
     const modalRef = this.modalService.open(ConfirmDialogComponent, { centered: true });
     (modalRef.componentInstance as ConfirmDialogComponent).title =
       `You are deleting the skill.`;
-    modalRef.closed.subscribe(data => { this.dataService.deleteSkill(id); this.refresh() });
-  }
-
-  public refresh(): void {
-    this.skillsList$ = this.dataService.getSkills()
+    modalRef.closed.subscribe(data => { this.dataService.deleteSkill(id); this.skillsList$ = this.dataService.getSkills() });
   }
 
   public ngOnDestroy(): void {

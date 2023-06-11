@@ -45,7 +45,7 @@ export class DataService {
 
     deleteJobPosition(id: number) {
         const url = `${this.baseUrl}/api/job-positions/${id}`;
-        this.http.delete(url).subscribe(
+        this.http.delete(url, { responseType: 'text' }).subscribe(
             () => {
                 console.log('Job Position deleted successfully!');
                 // Handle any success actions here
@@ -59,7 +59,7 @@ export class DataService {
 
     editJobPosition(jobPosition: JobPosition) {
         const url = `${this.baseUrl}/api/job-positions/${jobPosition.id}`;
-        this.http.put(url, jobPosition).subscribe(
+        this.http.put(url, jobPosition, { responseType: 'text' }).subscribe(
             () => {
                 console.log('Row updated successfully!');
                 // Handle any success actions here

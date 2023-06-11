@@ -55,6 +55,11 @@
   }
 }
 
+.dates {
+  display: flex;
+  gap: 1rem;
+}
+
 .app-backdrop {
   --app-backdrop-background-color: rgb(207, 252, 250);
 }

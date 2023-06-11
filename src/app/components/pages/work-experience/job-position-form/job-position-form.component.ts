@@ -45,8 +45,10 @@ export class JobPositionFormComponent {
     logoSrc: ['', Validators.required],
     logoAltText: ['', Validators.required],
     position: ['', Validators.required],
-    startDate: ['', Validators.required],
-    endDate: [''],
+    startMonth: ['', Validators.required],
+    startYear: ['', Validators.required],
+    endMonth: [],
+    endYear: [],
     city: ['', Validators.required],
     description: ['', Validators.required],
     remote: [false]
@@ -80,18 +82,33 @@ export class JobPositionFormComponent {
     return this.jobPositionForm.get('position') as FormControl;
   }
 
+
   /**
-   * Gets the startDate from data form
+   * Gets the startMonth from data form
    */
-  public get startDate(): FormControl {
-    return this.jobPositionForm.get('startDate') as FormControl;
+  public get startMonth(): FormControl {
+    return this.jobPositionForm.get('startMonth') as FormControl;
   }
 
   /**
-   * Gets the endDate from data form
+   * Gets the startYear from data form
    */
-  public get endDate(): FormControl {
-    return this.jobPositionForm.get('endDate') as FormControl;
+  public get startYear(): FormControl {
+    return this.jobPositionForm.get('startYear') as FormControl;
+  }
+
+  /**
+ * Gets the endMonth from data form
+ */
+  public get endMonth(): FormControl {
+    return this.jobPositionForm.get('endMonth') as FormControl;
+  }
+
+  /**
+   * Gets the endYear from data form
+   */
+  public get endYear(): FormControl {
+    return this.jobPositionForm.get('endYear') as FormControl;
   }
 
   /**

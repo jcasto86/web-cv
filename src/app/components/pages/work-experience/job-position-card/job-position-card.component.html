@@ -43,18 +43,18 @@
       </a>
     </div>
 
-    <div class="dates" [ngClass]="{ 'currently-exists': !data.endDate }">
+    <div class="dates" [ngClass]="{ 'currently-exists': !data.endYear }">
       <!-- <h5>{{ data.startDate.getMonth() | number : '2.0' }}/{{ data.startDate.getFullYear() }} -</h5> -->
-      <h5>{{ data.startDate }} -</h5>
+      <h5>{{ data.startMonth | number : '2.0' }}/{{ data.startYear }} -</h5>
       &nbsp;
       <!-- <h5 *ngIf="data.endDate; else Currently">
         {{ data.endDate.getMonth() | number : '2.0' }}/{{ data.endDate.getFullYear() }}
       </h5> -->
-      <h5 *ngIf="data.endDate; else Currently">
-        {{ data.endDate }}
+      <h5 *ngIf="data.endYear; else Currently">
+        {{ data.endMonth | number : '2.0' }}/{{ data.endYear }}
       </h5>
       <ng-template #Currently>
-        <h5>Currently</h5>
+        <h5>Present</h5>
       </ng-template>
     </div>
 

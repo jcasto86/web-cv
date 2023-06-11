@@ -52,7 +52,7 @@
   .location {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 1rem;
     align-items: baseline;
     flex-wrap: wrap;
     max-width: 13.5rem;
