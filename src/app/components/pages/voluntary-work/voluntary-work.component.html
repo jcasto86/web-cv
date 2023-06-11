@@ -1,8 +1,25 @@
-<div class="voluntary-work__header">
-  <h2 class="voluntary-work__header__title">Voluntary Work</h2>
-  <p class="voluntary-work__header__subtitle">Insert description</p>
+<div class="work-experience__header">
+  <h2 class="work-experience__header__title">Voluntary Work</h2>
+  <p class="work-experience__header__subtitle">Insert description</p>
 </div>
 
-<p>voluntary-work works!</p>
+<app-job-position-form
+  *ngIf="isFormModalOpen"
+  [isEditMode]="editMode"
+  [jobPositionData]="currentJobPosition"
+  (closeJobPositionFormModal)="closeFormModal()"
+  (submitJobPosition)="editMode ? editJobPosition($event) : addJobPosition($event)"
+></app-job-position-form>
+<div class="work-experience__add-position-button">
+  <button class="custom-button btn" (click)="openFormModal()">+ Add Job Position</button>
+</div>
+<div class="work-experience" *ngIf="jobPositionsCardData$">
+  <app-job-position-card
+    *ngFor="let cardData of jobPositionsCardData$ | async"
+    [data]="cardData"
+    (editJobPosition)="openEditJobPositionModal(cardData)"
+    (deleteJobPosition)="deleteJobPosition(cardData)"
+  ></app-job-position-card>
+</div>
 
 <app-arrows-previous-next-section [arrowsText]="arrowsData"></app-arrows-previous-next-section>
