@@ -3,6 +3,8 @@ import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arr
 import { Skill } from './skill-data.model';
 import { DataService } from '../../../data.service';
 import { Observable, Subscription } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmDialogComponent } from '../../parts/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-skills',
@@ -40,7 +42,7 @@ export class SkillsComponent implements OnDestroy {
     routerLinkNext: '/voluntary-work',
   };
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private modalService: NgbModal) {
 
     this.skillsList$ = this.dataService.getSkills()
 
@@ -52,6 +54,21 @@ export class SkillsComponent implements OnDestroy {
  */
   public addSkill(skill: Skill): void {
     this.dataService.postSkill(skill);
+    this.skillsList$ = this.dataService.getSkills()
+  }
+
+  /**
+ * Function that opens confirm dialog. When its closed, subscribes to
+ * modal service and emits data to parent with address received.
+ */
+  public openDialog(id: number): void {
+    const modalRef = this.modalService.open(ConfirmDialogComponent, { centered: true });
+    (modalRef.componentInstance as ConfirmDialogComponent).title =
+      `You are deleting the skill.`;
+    modalRef.closed.subscribe(data => { this.dataService.deleteSkill(id); this.refresh() });
+  }
+
+  public refresh(): void {
     this.skillsList$ = this.dataService.getSkills()
   }
 

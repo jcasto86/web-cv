@@ -97,7 +97,7 @@ export class DataService {
 
     deleteSkill(id: number) {
         const url = `${this.baseUrl}/api/skills/${id}`;
-        this.http.delete(url).subscribe(
+        this.http.delete(url, { responseType: 'text' }).subscribe(
             () => {
                 console.log('Skill deleted successfully!');
                 // Handle any success actions here
@@ -108,22 +108,4 @@ export class DataService {
             }
         )
     }
-
-    editSkill(skill: Skill) {
-        const url = `${this.baseUrl}/api/job-positions/${skill.id}`;
-        this.http.put(url, skill).subscribe(
-            () => {
-                console.log('Skill updated successfully!');
-                // Handle any success actions here
-            },
-            error => {
-                console.log('An error occurred while updating the Skill: ', error);
-                // Handle any error actions here
-            }
-        )
-        console.log('Skill selected to edit: ', skill);
-        // return of([])
-    }
-
-
 }
