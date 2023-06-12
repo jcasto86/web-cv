@@ -10,10 +10,14 @@ export const MockHomepageData: PhotoHighlightsPresentationData = {
   highlights: [
     {
       title: 'Software Developer',
-      description: 'ILERNA'
+      description: 'Teralco Group'
     },
     {
-      title: 'MBA',
+      title: 'DAW',
+      description: 'ILERNA Online'
+    },
+    {
+      title: 'MBA | Marketing',
       description: 'IME Business School - University of Salamanca'
     },
   ]

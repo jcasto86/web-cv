@@ -50,7 +50,7 @@ export class WorkExperienceComponent implements OnDestroy {
   };
 
   constructor(private dataService: DataService, private cdr: ChangeDetectorRef) {
-    this.jobPositionsCardData$ = this.dataService.getJobPositions()
+    this.jobPositionsCardData$ = this.dataService.getJobPositions();
   }
 
   public ngOnDestroy(): void {

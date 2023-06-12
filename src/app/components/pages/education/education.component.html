@@ -5,7 +5,7 @@
   </div>
 
   <div class="education__cards" *ngIf="educationCardData$ | async as educationCardData">
-    <ng-container *ngFor="let CardData of educationCardData">
+    <ng-container *ngFor="let CardData of educationCardData.slice()?.reverse()">
       <app-education-card [educationCardData]="CardData"></app-education-card>
     </ng-container>
   </div>

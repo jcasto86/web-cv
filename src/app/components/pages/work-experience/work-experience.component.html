@@ -15,7 +15,7 @@
 </div>
 <div class="work-experience" *ngIf="jobPositionsCardData$">
   <app-job-position-card
-    *ngFor="let cardData of jobPositionsCardData$ | async"
+    *ngFor="let cardData of (jobPositionsCardData$ | async)?.slice()?.reverse()"
     [data]="cardData"
     (editJobPosition)="openEditJobPositionModal(cardData)"
     (deleteJobPosition)="deleteJobPosition(cardData)"

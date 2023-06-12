@@ -9,7 +9,10 @@
   <div class="skills__container">
     <ng-container *ngIf="skillsList$">
       <div class="skills__container__list">
-        <div class="skills__container__list__card" *ngFor="let skill of skillsList$ | async">
+        <div
+          class="skills__container__list__card"
+          *ngFor="let skill of (skillsList$ | async)?.slice()?.reverse()"
+        >
           <h4>{{ skill.title }}</h4>
           <a
             class="skills__container__list__card__img-container"

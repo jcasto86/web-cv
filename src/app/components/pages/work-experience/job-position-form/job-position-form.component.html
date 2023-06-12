@@ -70,13 +70,7 @@
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label" for="startYear">Start Date</label>
           <div class="dates col-sm-9">
-            <!-- <input
-              class="form-control"
-              type="text"
-              id="startMonth"
-              formControlName="startMonth"
-              required
-            /> -->
+            <h6>Month</h6>
             <select
               placeholder="Month"
               class="form-control"
@@ -98,14 +92,7 @@
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <h4>/</h4>
-            <!-- <input
-              class="form-control"
-              type="text"
-              id="startYear"
-              formControlName="startYear"
-              required
-            /> -->
+            <h6>Year</h6>
             <select
               class="form-control"
               type="text"
@@ -133,6 +120,7 @@
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label" for="endMonth">End Date</label>
           <div class="dates col-sm-9">
+            <h6>Month</h6>
             <select class="form-control" type="text" id="endMonth" formControlName="endMonth">
               <option value="1">01</option>
               <option value="2">02</option>
@@ -147,14 +135,7 @@
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <h4>/</h4>
-            <!-- <input
-              class="form-control"
-              type="text"
-              id="endYear"
-              formControlName="endYear"
-              required
-            /> -->
+            <h6>Year</h6>
             <select class="form-control" type="text" id="endYear" formControlName="endYear">
               <option value="2023">2023</option>
               <option value="2022">2022</option>
@@ -199,7 +180,6 @@
             Submit
           </button>
         </div>
-        {{ jobPositionForm.valid }}
       </form>
     </div>
   </div>

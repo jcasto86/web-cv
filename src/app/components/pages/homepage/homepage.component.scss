@@ -1,6 +1,28 @@
 .homepage {
   text-align: center;
 
+  // &__cv-pdf {
+  //   margin-top: 1rem;
+  //   display: flex;
+  //   justify-content: center;
+  //   gap: 2rem;
+  //   margin-bottom: 3rem;
+
+  //   a {
+  //     color: lightcoral;
+  //     font-weight: 400;
+  //     text-decoration: none;
+  //     transition: transform 0.5s ease;
+
+  //     &:hover {
+  //       position: static;
+  //       transform: translateY(7.5px);
+  //       font-weight: 600;
+  //       color: rgb(241, 94, 94);
+  //     }
+  //   }
+  // }
+
   .app-photo-highlights-presentation {
     padding-bottom: 3rem;
     border-bottom: 3px double rgba(32, 178, 171, 0.6);

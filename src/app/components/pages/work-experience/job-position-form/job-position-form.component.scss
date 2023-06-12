@@ -58,6 +58,12 @@
 .dates {
   display: flex;
   gap: 1rem;
+  align-items: center;
+
+  h6 {
+    margin: 0;
+    color: rgb(21, 116, 111);
+  }
 }
 
 .app-backdrop {

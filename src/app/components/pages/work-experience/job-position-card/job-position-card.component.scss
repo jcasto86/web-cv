@@ -57,35 +57,29 @@
     flex-wrap: wrap;
     max-width: 13.5rem;
 
+    h5 {
+      font-size: 1rem;
+    }
+
     &__remote {
-      font-weight: 400;
+      color: rgb(160, 160, 160);
+      font-weight: 600;
     }
   }
 
   .dates {
     display: flex;
     flex-direction: row;
+
+    h5 {
+      font-size: 1rem;
+    }
   }
 }
 
 @media (min-width: 768px) {
   .position-buttons {
-    // display: flex;
-    // justify-content: right;
-    // gap: 0.5rem;
-    // margin-bottom: 0.25rem;
-
     button {
-      // font-size: 0.75rem;
-      // display: flex;
-      // align-items: center;
-      // gap: 0.375rem;
-
-      &:hover {
-        // // transform: scale(1.1);
-        // font-weight: bold;
-      }
-
       p {
         display: block;
       }
@@ -102,6 +96,21 @@
 
       &__text {
         font-size: 1.75rem;
+      }
+    }
+
+    .dates {
+      display: flex;
+      flex-direction: row;
+
+      h5 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .location {
+      h5 {
+        font-size: 1.25rem;
       }
     }
   }
