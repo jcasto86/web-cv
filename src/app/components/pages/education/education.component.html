@@ -15,15 +15,13 @@
     <button class="custom-button btn" (click)="openFormModal()">+ Add Education</button>
   </div>
 
-  <div class="education__cards" *ngIf="educationCardData$ | async as educationCardData">
-    <ng-container *ngFor="let CardData of educationCardData.slice()?.reverse()">
-      <app-education-card
-        *ngFor="let cardData of (educationCardData$ | async)?.slice()?.reverse()"
-        [data]="cardData"
-        (editEducation)="openEditEducationModal(cardData)"
-        (deleteEducation)="deleteEducation(cardData)"
-      ></app-education-card>
-    </ng-container>
+  <div class="education__cards" *ngIf="educationCardData$">
+    <app-education-card
+      *ngFor="let cardData of (educationCardData$ | async)?.slice()?.reverse()"
+      [data]="cardData"
+      (editEducation)="openEditEducationModal(cardData)"
+      (deleteEducation)="deleteEducation(cardData)"
+    ></app-education-card>
   </div>
 
   <app-arrows-previous-next-section [arrowsText]="arrowsData"></app-arrows-previous-next-section>

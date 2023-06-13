@@ -14,3 +14,25 @@
     }
   }
 }
+
+.contact__form {
+  .form-control {
+    background-color: transparent;
+
+    &:focus {
+      background-color: rgba(32, 178, 171, 0.132);
+    }
+  }
+
+  button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 575px) {
+  .contact__form {
+    button {
+      width: 100%;
+    }
+  }
+}

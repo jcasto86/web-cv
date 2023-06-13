@@ -8,12 +8,12 @@
   action="https://formsubmit.co/javiercastojarillo@gmail.com"
   method="POST"
 >
-  <label for="name">Name</label>
-  <input type="text" name="name" required />
-  <label for="message">Message</label>
+  <label class="form-label" for="name">Name</label>
+  <input class="form-control" type="text" name="name" required />
+  <label class="form-label" for="message">Message</label>
   <!-- <textarea type="textarea" name="message" required /> -->
-  <textarea name="message" id="message" cols="30" rows="10"></textarea>
-  <button type="submit">Send</button>
+  <textarea class="form-control" name="message" id="message" cols="50" rows="10"></textarea>
+  <div><button class="btn btn-secondary float-right" type="submit">Send</button></div>
   <input type="hidden" name="_next" value="http://localhost:4200/contact-email-sent" />
 </form>
 
