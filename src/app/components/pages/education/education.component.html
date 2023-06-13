@@ -4,9 +4,25 @@
     <p class="education__header__subtitle">University Degrees and Masters</p>
   </div>
 
+  <app-education-form
+    *ngIf="isFormModalOpen"
+    [isEditMode]="editMode"
+    [educationData]="currentEducation"
+    (closeEducationFormModal)="closeFormModal()"
+    (submitEducation)="editMode ? editEducation($event) : addEducation($event)"
+  ></app-education-form>
+  <div class="education__add-position-button">
+    <button class="custom-button btn" (click)="openFormModal()">+ Add Education</button>
+  </div>
+
   <div class="education__cards" *ngIf="educationCardData$ | async as educationCardData">
     <ng-container *ngFor="let CardData of educationCardData.slice()?.reverse()">
-      <app-education-card [educationCardData]="CardData"></app-education-card>
+      <app-education-card
+        *ngFor="let cardData of (educationCardData$ | async)?.slice()?.reverse()"
+        [data]="cardData"
+        (editEducation)="openEditEducationModal(cardData)"
+        (deleteEducation)="deleteEducation(cardData)"
+      ></app-education-card>
     </ng-container>
   </div>
 

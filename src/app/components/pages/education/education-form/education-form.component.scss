@@ -1,4 +1,4 @@
-.job-position-form__content {
+.education-form__content {
   padding-top: 1rem;
   z-index: 2;
   position: fixed;
@@ -8,8 +8,8 @@
   margin-bottom: 0;
   height: 100%;
   overflow-y: auto;
-  background-color: rgb(103, 239, 232);
-  border: 3px solid rgb(32, 178, 170);
+  background-color: lightcoral;
+  border: 3px solid rgb(118, 0, 0);
 
   &__head-line {
     padding-bottom: 1rem;
@@ -21,15 +21,22 @@
     border-bottom: 2px solid white;
 
     &__title {
-      color: rgb(21, 116, 111);
+      color: rgb(118, 0, 0);
       // margin-left: 1.25rem;
       font-size: 1.5rem;
       margin-bottom: 0;
+    }
+
+    &__button-close {
+      --custom-button-background-color: rgb(118, 0, 0, 0.9);
+      --custom-button-background-color-hover: rgb(118, 0, 0, 0.5);
+      --custom-button-border-color: rgb(118, 0, 0);
     }
   }
 
   &__form {
     label {
+      color: white;
       font-weight: 600;
     }
 
@@ -66,16 +73,16 @@
 
   h6 {
     margin: 0;
-    color: rgb(21, 116, 111);
+    color: rgb(118, 0, 0);
   }
 }
 
 .app-backdrop {
-  --app-backdrop-background-color: rgb(207, 252, 250);
+  --app-backdrop-background-color: rgba(240, 128, 128, 0.573);
 }
 
 @media (min-width: 480px) {
-  .job-position-form__content {
+  .education-form__content {
     height: fit-content;
     z-index: 2;
     padding: 2rem 6rem;

@@ -4,10 +4,10 @@ export interface JobPosition {
     logoSrc: string;
     logoAltText: string;
     position: string;
-    startMonth: string;
-    startYear: string;
-    endMonth?: string;
-    endYear?: string;
+    startMonth: number;
+    startYear: number;
+    endMonth?: number;
+    endYear?: number;
     city: string;
     description: string;
     remote?: boolean;

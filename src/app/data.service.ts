@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from './components/pages/homepage/homepage-data.model';
 import { JobPosition } from './components/pages/work-experience/job-position-data.model';
 import { Skill } from './components/pages/skills/skill-data.model';
+import { EducationData } from './components/pages/education/education-card-data.model';
 
 @Injectable({
     providedIn: 'root'
@@ -74,6 +75,53 @@ export class DataService {
     }
 
     /// TODO: **** EDUCATION ****
+
+
+
+    /// **** JOB POSITIONS ****
+
+    getEducations(): Observable<EducationData[]> {
+        return this.http.get<EducationData[]>(`${this.baseUrl}/api/education`)
+    }
+
+    postEducation(education: EducationData) {
+        this.http.post(`${this.baseUrl}/api/education`, education).subscribe(
+            response => {
+                console.log('Education inserted successfully --> RESPONSE', response);
+            },
+            error => {
+                console.error('Error inserting Education:', error);
+            }
+        );
+    }
+
+    deleteEducation(id: number) {
+        const url = `${this.baseUrl}/api/education/${id}`;
+        this.http.delete(url, { responseType: 'text' }).subscribe(
+            () => {
+                console.log('Education deleted successfully!');
+            },
+            error => {
+                console.log('An error occurred while deleting Education:', error);
+            }
+        )
+    }
+
+    editEducation(education: EducationData) {
+        const url = `${this.baseUrl}/api/education/${education.id}`;
+        this.http.put(url, education, { responseType: 'text' }).subscribe(
+            () => {
+                console.log('Education updated successfully!');
+            },
+            error => {
+                console.log('An error occurred while updating the Education: ', error);
+            }
+        )
+    }
+
+
+
+
 
 
     /// **** SKILLS ****

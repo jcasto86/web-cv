@@ -49,7 +49,7 @@ export class WorkExperienceComponent implements OnDestroy {
     routerLinkNext: '/education',
   };
 
-  constructor(private dataService: DataService, private cdr: ChangeDetectorRef) {
+  constructor(private dataService: DataService) {
     this.jobPositionsCardData$ = this.dataService.getJobPositions();
   }
 

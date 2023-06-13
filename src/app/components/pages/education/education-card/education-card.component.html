@@ -1,37 +1,63 @@
-<ng-container *ngIf="educationCardData as data">
+<ng-container *ngIf="data">
+  <div class="education-buttons">
+    <button class="education-buttons__edit btn btn-outline-success" (click)="editEducation.emit()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-pencil"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
+        />
+      </svg>
+      <p>Edit</p>
+    </button>
+    <button class="education-buttons__delete btn btn-outline-danger" (click)="openDialog()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-trash"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"
+        />
+        <path
+          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"
+        />
+      </svg>
+      <p>Delete</p>
+    </button>
+  </div>
+
   <div class="education-card jumbotron">
     <a
       class="education-card__logo"
       title="{{ data.university }}"
-      [href]="data.logo?.href"
+      [href]="data.logoHref"
       target="_blank"
     >
-      <img [src]="data.logo?.src" [alt]="data.logo?.altText" />
+      <img [src]="data.logoSrc" [alt]="data.logoAltText" />
     </a>
 
     <h5 class="education-card__study-name">{{ data.studyName | titlecase }}</h5>
 
-    <div class="education-card__dates" [ngClass]="{ 'currently-exists': !data.endDate }">
-      <h6>
-        {{ data.startDate?.getMonth() | number : '2.0' }}/{{ data.startDate?.getFullYear() }} -
-      </h6>
+    <div class="education-card__dates" [ngClass]="{ 'currently-exists': !data.endYear }">
+      <h6>{{ data.startMonth }}/{{ data.startYear }} -</h6>
       &nbsp;
-      <h6 *ngIf="data.endDate; else Currently">
-        {{ data.endDate.getMonth() | number : '2.0' }}/{{ data.endDate.getFullYear() }}
-      </h6>
+      <h6 *ngIf="data.endYear; else Currently">{{ data.endMonth }}/{{ data.endYear }}</h6>
       <ng-template #Currently>
-        <h6>Currently</h6>
+        <h6>Present</h6>
       </ng-template>
     </div>
 
     <div class="education-card__location">
       <h6>{{ data.city | titlecase }}</h6>
-      <h6 class="education-card__location__remote" *ngIf="data.remote">(Remote)</h6>
     </div>
-
-    <ng-container class="education-card__description" *ngIf="data.description">
-      <hr class="my-4" />
-      <p>{{ data.description }}</p>
-    </ng-container>
   </div>
 </ng-container>

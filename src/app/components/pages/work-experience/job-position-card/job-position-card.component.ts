@@ -10,7 +10,7 @@ import { ConfirmDialogComponent } from 'src/app/components/parts/confirm-dialog/
   templateUrl: './job-position-card.component.html',
   styleUrls: ['./job-position-card.component.scss'],
 })
-export class JobPositionCardComponent implements OnInit {
+export class JobPositionCardComponent {
   @Input() data?: JobPosition;
 
   /**
@@ -25,14 +25,7 @@ export class JobPositionCardComponent implements OnInit {
   @Output()
   public editJobPosition: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private dataService: DataService, private modalService: NgbModal) { }
-
-  ngOnInit(): void { }
-
-  // deleteJobPosition() {
-  //   if (this.data?.id)
-  //     this.dataService.deleteJobPosition(this.data?.id)
-  // }
+  constructor(private modalService: NgbModal) { }
 
   /**
    * Function that opens confirm dialog. When its closed, subscribes to
@@ -42,6 +35,9 @@ export class JobPositionCardComponent implements OnInit {
     const modalRef = this.modalService.open(ConfirmDialogComponent, { centered: true });
     (modalRef.componentInstance as ConfirmDialogComponent).title =
       `You are deleting "${this.data?.position}" position.`;
-    modalRef.closed.subscribe(data => this.deleteJobPosition.emit(data));
+    modalRef.closed.subscribe(data => {
+      console.log('DATA JOB POSITION: ', data);
+      this.deleteJobPosition.emit(data)
+    });
   }
 }
