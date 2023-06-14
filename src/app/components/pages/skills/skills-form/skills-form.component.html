@@ -1,6 +1,12 @@
 <section class="skills-form">
   <ng-container *ngIf="!isFormOpen; else showForm">
-    <button class="custom-button btn" (click)="toogle()">Add new Skill</button>
+    <button
+      [ngStyle]="{ display: showLoggedInElements ? '' : 'none' }"
+      class="custom-button btn"
+      (click)="toogle()"
+    >
+      Add new Skill
+    </button>
   </ng-container>
 
   <ng-template #showForm>

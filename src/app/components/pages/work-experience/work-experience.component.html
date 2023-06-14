@@ -11,7 +11,13 @@
   (submitJobPosition)="editMode ? editJobPosition($event) : addJobPosition($event)"
 ></app-job-position-form>
 <div class="work-experience__add-position-button">
-  <button class="custom-button btn" (click)="openFormModal()">+ Add Job Position</button>
+  <button
+    [ngStyle]="{ display: showLoggedInElements ? '' : 'none' }"
+    class="custom-button btn"
+    (click)="openFormModal()"
+  >
+    + Add Job Position
+  </button>
 </div>
 
 <div class="work-experience" *ngIf="jobPositionsCardData$">

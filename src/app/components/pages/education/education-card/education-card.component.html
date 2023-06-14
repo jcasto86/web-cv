@@ -1,5 +1,5 @@
 <ng-container *ngIf="data">
-  <div class="education-buttons">
+  <div [ngStyle]="{ display: showLoggedInElements ? '' : 'none' }" class="education-buttons">
     <button class="education-buttons__edit btn btn-outline-success" (click)="editEducation.emit()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +48,11 @@
     <h5 class="education-card__study-name">{{ data.studyName | titlecase }}</h5>
 
     <div class="education-card__dates" [ngClass]="{ 'currently-exists': !data.endYear }">
-      <h6>{{ data.startMonth }}/{{ data.startYear }} -</h6>
+      <h6>{{ data.startMonth | number : '2.0' }}/{{ data.startYear }} -</h6>
       &nbsp;
-      <h6 *ngIf="data.endYear; else Currently">{{ data.endMonth }}/{{ data.endYear }}</h6>
+      <h6 *ngIf="data.endYear; else Currently">
+        {{ data.endMonth | number : '2.0' }}/{{ data.endYear }}
+      </h6>
       <ng-template #Currently>
         <h6>Present</h6>
       </ng-template>

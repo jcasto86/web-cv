@@ -2,13 +2,17 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { Skill } from '../skill-data.model';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormHelperService } from 'src/app/form-helper.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-skills-form',
   templateUrl: './skills-form.component.html',
   styleUrls: ['./skills-form.component.scss']
 })
-export class SkillsFormComponent implements OnChanges {
+export class SkillsFormComponent implements OnInit, OnChanges {
+
+  public showLoggedInElements: boolean = false;
+
 
   /**
  * Skill Data received from the parent component.
@@ -57,8 +61,18 @@ export class SkillsFormComponent implements OnChanges {
   public get certificate(): FormControl {
     return this.skillForm.get('certificate') as FormControl;
   }
+
   constructor(private fb: FormBuilder,
-    private formHelpers: FormHelperService,) { }
+    private formHelpers: FormHelperService, private router: Router) { }
+
+
+  public ngOnInit(): void {
+    if (this.router.url === '/dashboard/skills') {
+      this.showLoggedInElements = true
+    }
+    console.log('ROUTER', this.router.url);
+    console.log(this.router.url === '/dashboard/skills');
+  }
 
   public ngOnChanges(changes: SimpleChanges): void {
     this.skillForm.reset();

@@ -1,5 +1,5 @@
 <ng-container *ngIf="data">
-  <div class="position-buttons">
+  <div [ngStyle]="{ display: showLoggedInElements ? '' : 'none' }" class="position-buttons">
     <button class="position-buttons__edit btn btn-outline-success" (click)="editJobPosition.emit()">
       <svg
         xmlns="http://www.w3.org/2000/svg"

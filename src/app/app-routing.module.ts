@@ -20,7 +20,13 @@ const routes: Routes = [
   { path: 'skills', component: SkillsComponent },
   { path: 'voluntary-work', component: VoluntaryWorkComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'add-data', component: AddDataComponent },
+  {
+    path: 'dashboard', component: AddDataComponent, children: [
+      { path: 'work-experience', component: WorkExperienceComponent },
+      { path: 'education', component: EducationComponent },
+      { path: 'skills', component: SkillsComponent }
+    ]
+  },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact-email-sent', component: EmailSentThankYouComponent },
@@ -35,10 +41,10 @@ const routes: Routes = [
     canActivate: [ValidarTokenGuard],
     canLoad: [ValidarTokenGuard]
   },
-  {
-    path: '**',
-    redirectTo: 'auth'
-  }
+  // {
+  //   path: '**',
+  //   redirectTo: 'auth'
+  // }
 ];
 
 @NgModule({

@@ -23,6 +23,7 @@
           </a>
 
           <button
+            [ngStyle]="{ display: showLoggedInElements ? '' : 'none' }"
             class="skills__container__list__card__button-delete btn btn-outline-danger"
             (click)="openDialog(skill.id!)"
           >

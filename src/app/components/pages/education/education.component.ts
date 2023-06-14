@@ -3,15 +3,16 @@ import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arr
 import { EducationData } from './education-card-data.model';
 import { Observable, Subscription, of } from 'rxjs';
 import { DataService } from 'src/app/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss'],
 })
-export class EducationComponent {
+export class EducationComponent implements OnInit {
 
-
+  public showLoggedInElements: boolean = false;
 
   @HostListener('window:keyup.escape') handleKeyUp() {
     this.closeFormModal()
@@ -51,8 +52,16 @@ export class EducationComponent {
     routerLinkNext: '/skills',
   };
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
     this.educationCardData$ = this.dataService.getEducations()
+  }
+
+  public ngOnInit(): void {
+    if (this.router.url === '/dashboard/education') {
+      this.showLoggedInElements = true
+    }
+    console.log('ROUTER', this.router.url);
+    console.log(this.router.url === '/dashboard/education');
   }
 
   public ngOnDestroy(): void {

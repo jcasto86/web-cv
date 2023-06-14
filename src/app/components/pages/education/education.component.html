@@ -11,7 +11,10 @@
     (closeEducationFormModal)="closeFormModal()"
     (submitEducation)="editMode ? editEducation($event) : addEducation($event)"
   ></app-education-form>
-  <div class="education__add-position-button">
+  <div
+    [ngStyle]="{ display: showLoggedInElements ? '' : 'none' }"
+    class="education__add-position-button"
+  >
     <button class="custom-button btn" (click)="openFormModal()">+ Add Education</button>
   </div>
 

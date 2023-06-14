@@ -1,5 +1,26 @@
-.checkbox {
-  height: 1.25rem;
-  width: 1.25rem;
-  vertical-align: -webkit-baseline-middle;
+.dashboard {
+  &__header {
+    color: lightseagreen;
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  &__pages-links {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    a {
+      color: lightcoral;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: rgba(240, 128, 128, 0.609);
+      }
+    }
+  }
 }

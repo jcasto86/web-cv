@@ -5,13 +5,17 @@ import { DataService } from '../../../data.service';
 import { Observable, Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmDialogComponent } from '../../parts/confirm-dialog/confirm-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss'],
 })
-export class SkillsComponent implements OnDestroy {
+export class SkillsComponent implements OnInit, OnDestroy {
+
+  public showLoggedInElements: boolean = false;
+
 
   /**
 * Variables that stores all the Skills data.
@@ -42,10 +46,18 @@ export class SkillsComponent implements OnDestroy {
     routerLinkNext: '/voluntary-work',
   };
 
-  constructor(private dataService: DataService, private modalService: NgbModal) {
+  constructor(private dataService: DataService, private modalService: NgbModal, private router: Router) {
 
     this.skillsList$ = this.dataService.getSkills()
 
+  }
+
+  public ngOnInit(): void {
+    if (this.router.url === '/dashboard/skills') {
+      this.showLoggedInElements = true
+    }
+    console.log('ROUTER', this.router.url);
+    console.log(this.router.url === '/dashboard/skills');
   }
 
   /**
