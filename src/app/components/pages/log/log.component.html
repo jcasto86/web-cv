@@ -12,26 +12,40 @@
         <div class="col">
           <form [formGroup]="logForm" (ngSubmit)="onSubmit()">
             <div class="mb-3 row">
-              <label class="col-sm-3 col-form-label" for="id">Email</label>
-              <div class="col-sm-9">
-                <input class="form-control" type="text" id="id" formControlName="id" />
-              </div>
-            </div>
-
-            <div class="mb-3 row">
-              <label class="col-sm-3 col-form-label" for="authorized">Password</label>
+              <label class="col-sm-3 col-form-label" for="email">Email</label>
               <div class="col-sm-9">
                 <input
                   class="form-control"
                   type="text"
-                  id="authorized"
-                  formControlName="authorized"
+                  id="email"
+                  formControlName="email"
+                  placeholder="Insert your email address"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="password">Password</label>
+              <div class="col-sm-9">
+                <input
+                  placeholder="Insert your password"
+                  class="form-control"
+                  type="password"
+                  id="password"
+                  formControlName="password"
                 />
               </div>
             </div>
 
             <div>
-              <button class="btn btn-secondary" type="submit">Submit</button>
+              <button
+                style="width: 100%"
+                class="btn btn-secondary"
+                type="submit"
+                [disabled]="logForm.invalid"
+              >
+                Submit
+              </button>
             </div>
           </form>
         </div>

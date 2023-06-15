@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Log } from './log-data.model';
 import { LogService } from './log.service';
 import { tap } from 'rxjs/operators';
@@ -23,32 +23,25 @@ export class LogComponent implements OnInit, AfterViewInit {
   }
 
   public logForm: FormGroup = this.fb.group({
-    email: [''],
-    password: ['']
+    email: ['', Validators.required],
+    password: ['', Validators.required]
   })
 
   /**
-  * Gets the id from data form.
+  * Gets the email from data form.
   */
-  public get id(): FormControl {
-    return this.logForm.get('id') as FormControl;
+  public get email(): FormControl {
+    return this.logForm.get('email') as FormControl;
   }
 
   /**
-  * Gets the authorized from data form.
+  * Gets the password from data form.
   */
-  public get authorized(): FormControl {
-    return this.logForm.get('authorized') as FormControl;
+  public get password(): FormControl {
+    return this.logForm.get('password') as FormControl;
   }
 
   ngOnInit(): void {
-
-
-    this.logForm = this.fb.group({
-      id: 1,
-      authorized: 1
-    })
-
     this.log?.pipe(
       tap(
         (a) => {
@@ -63,8 +56,16 @@ export class LogComponent implements OnInit, AfterViewInit {
   public onSubmit() {
     console.log('FORM VALUE: ', this.logForm.value);
     const log = { id: 1, authorized: 1 }
-    this.editLogIn(log)
+
+    const email = this.logForm.get('email')?.value;
+
+    const password = this.logForm.get('password')?.value;
+
+
+    if ((email === 'jksto@hotmail.com') && (password === '123456')) { this.editLogIn(log) }
     this.log = this.logService.getLog()
+
+    this.logForm.reset()
   }
 
   public editLogIn(log: Log) {
