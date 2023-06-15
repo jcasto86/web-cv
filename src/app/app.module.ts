@@ -32,6 +32,7 @@ import { HamburgerNavigationComponent } from './components/shared/toolbar-mobile
 import { EmailSentThankYouComponent } from './components/pages/contact/email-sent-thank-you/email-sent-thank-you.component';
 import { SkillsFormComponent } from './components/pages/skills/skills-form/skills-form.component';
 import { EducationFormComponent } from './components/pages/education/education-form/education-form.component';
+import { LogComponent } from './components/pages/log/log.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { EducationFormComponent } from './components/pages/education/education-f
     EmailSentThankYouComponent,
     SkillsFormComponent,
     EducationFormComponent,
+    LogComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, NgbModalModule],
   providers: [],

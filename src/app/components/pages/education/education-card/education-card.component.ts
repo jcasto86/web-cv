@@ -42,7 +42,7 @@ export class EducationCardComponent {
   public openDialog(): void {
     const modalRef = this.modalService.open(ConfirmDialogComponent, { centered: true });
     (modalRef.componentInstance as ConfirmDialogComponent).title =
-      `You are deleting "${this.data?.studyName}" education.`;
+      `You are deleting "${this.data?.studyName}" education card.`;
     modalRef.closed.subscribe(data => {
       console.log('DATAAAA: ', data);
       this.deleteEducation.emit(data)
