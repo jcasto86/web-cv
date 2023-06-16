@@ -13,7 +13,7 @@
       value="lightseagreen"
       (change)="onToolbarAndFooterOptionChange('lightseagreen')"
     />
-    GREEN
+    Green
   </div>
 
   <div style="color: coral; font-weight: 600">
@@ -23,7 +23,7 @@
       value="lightcoral"
       (change)="onToolbarAndFooterOptionChange('lightcoral')"
     />
-    CORAL
+    Coral
   </div>
 </div>
 
@@ -37,7 +37,7 @@
       value="lightseagreen"
       (change)="onTitleOptionChange('lightseagreen')"
     />
-    GREEN
+    Green
   </div>
 
   <div style="color: coral; font-weight: 600">
@@ -47,7 +47,45 @@
       value="lightcoral"
       (change)="onTitleOptionChange('lightcoral')"
     />
-    CORAL
+    Coral
+  </div>
+  <br />
+</div>
+
+<div style="margin-top: 2rem; margin-bottom: 2rem">
+  <p>Choose a <b>Background style</b>:</p>
+  <div style="color: darkgoldenrod; font-weight: 600">
+    <input
+      type="radio"
+      id="option1"
+      name="option"
+      value="option1"
+      (change)="changeBackgroundImage('option1')"
+      checked
+    />
+    Old White Paper
+  </div>
+
+  <div style="color: blueviolet; font-weight: 600">
+    <input
+      type="radio"
+      id="option2"
+      name="option"
+      value="option2"
+      (change)="changeBackgroundImage('option2')"
+    />
+    Colourful Vectors
+  </div>
+
+  <div style="color: palevioletred; font-weight: 600">
+    <input
+      type="radio"
+      id="option3"
+      name="option"
+      value="option3"
+      (change)="changeBackgroundImage('option3')"
+    />
+    Pink Clouds
   </div>
   <br />
 </div>
