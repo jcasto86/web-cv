@@ -1,9 +1,10 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
 import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model';
 import { EducationData } from './education-card-data.model';
 import { Observable, Subscription, of } from 'rxjs';
 import { DataService } from 'src/app/data.service';
 import { Router } from '@angular/router';
+import { ConfigService } from 'src/app/config.service';
 
 @Component({
   selector: 'app-education',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
+  @HostBinding('style.--custom-title-color') customColor: string = 'lightseagreen';
 
   public showLoggedInElements: boolean = false;
 
@@ -52,11 +54,22 @@ export class EducationComponent implements OnInit {
     routerLinkNext: '/skills',
   };
 
-  constructor(private dataService: DataService, private router: Router) {
+  constructor(private dataService: DataService, private router: Router, private configService: ConfigService) {
     this.educationCardData$ = this.dataService.getEducations()
   }
 
   public ngOnInit(): void {
+
+    this.configService.getSelectedTitleOption().subscribe(option => {
+      if (option === 'lightseagreen') {
+        this.customColor = 'lightseagreen';
+      } else if (option === 'lightcoral') {
+        this.customColor = 'lightcoral';
+      } else {
+        this.customColor = 'lightseagreen';
+      }
+    });
+
     if (this.router.url === '/dashboard/education') {
       this.showLoggedInElements = true
     }

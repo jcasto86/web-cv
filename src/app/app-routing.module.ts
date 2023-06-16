@@ -13,6 +13,7 @@ import { ValidarTokenGuard } from './guards/validar-token.guard';
 import { AddDataComponent } from './components/pages/add-data/add-data.component';
 import { EmailSentThankYouComponent } from './components/pages/contact/email-sent-thank-you/email-sent-thank-you.component';
 import { LogComponent } from './components/pages/log/log.component';
+import { ConfigComponent } from './components/pages/log/config/config.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -31,6 +32,11 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact-email-sent', component: EmailSentThankYouComponent },
+
+  {
+    path: 'config', component: ConfigComponent
+  },
+
 
   { path: 'log', component: LogComponent },
 

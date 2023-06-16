@@ -1,7 +1,7 @@
 <div *ngIf="log | async as logs">
   <div *ngFor="let log of logs; let first = first">
     <div style="text-align: center" *ngIf="first">
-      <h2>
+      <h2 class="log__title">
         {{ log.authorized === 0 ? 'Login' : 'My Account' }}
       </h2>
       <hr />
@@ -57,9 +57,21 @@
         routerLink="/dashboard"
         routerLinkActive="selected-link"
       >
-        Go to Dashboard
+        Dashboard
       </button>
       <br /><br />
+
+      <button
+        *ngIf="log.authorized === 1"
+        class="btn btn-secondary"
+        routerLink="/config"
+        routerLinkActive="selected-link"
+      >
+        Configuration
+      </button>
+      <br /><br />
+
+      <br />
 
       <button
         *ngIf="log.authorized === 1"

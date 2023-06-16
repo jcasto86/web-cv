@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, HostBinding, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Log } from './log-data.model';
 import { LogService } from './log.service';
 import { tap } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
+import { ConfigService } from 'src/app/config.service';
 
 @Component({
   selector: 'app-log',
@@ -12,13 +13,15 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class LogComponent implements OnInit, AfterViewInit {
 
+  @HostBinding('style.--custom-title-color') customColor: string = 'lightseagreen';
+
   public log?: Observable<Log[]>;
 
   public isAuth: boolean = false;
 
   public subscription: Subscription = new Subscription;
 
-  constructor(private fb: FormBuilder, private logService: LogService) {
+  constructor(private fb: FormBuilder, private logService: LogService, private configService: ConfigService) {
     this.log = this.logService.getLog()
   }
 
@@ -42,6 +45,17 @@ export class LogComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+
+    this.configService.getSelectedTitleOption().subscribe(option => {
+      if (option === 'lightseagreen') {
+        this.customColor = 'lightseagreen';
+      } else if (option === 'lightcoral') {
+        this.customColor = 'lightcoral';
+      } else {
+        this.customColor = 'lightseagreen';
+      }
+    });
+
     this.log?.pipe(
       tap(
         (a) => {
@@ -80,4 +94,6 @@ export class LogComponent implements OnInit, AfterViewInit {
     this.logService.editLog(log)
     this.log = this.logService.getLog()
   }
+
+
 }

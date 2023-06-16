@@ -1,23 +1,12 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model';
 import { ConfigService } from 'src/app/config.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss'],
+  selector: 'app-config',
+  templateUrl: './config.component.html',
+  styleUrls: ['./config.component.scss']
 })
-export class ContactComponent implements OnInit {
-
-
-
-  public arrowsData: PreviousNextArrows = {
-    previousText: 'Volunteering',
-    routerLinkPrevious: '/voluntary-work',
-    // nextText: 'Skills',
-    // routerLinkNext: '/skills',
-  };
-
+export class ConfigComponent implements OnInit {
   @HostBinding('style.--custom-title-color') customColor: string = 'lightseagreen';
 
   constructor(private configService: ConfigService) { }
@@ -32,5 +21,13 @@ export class ContactComponent implements OnInit {
         this.customColor = 'lightseagreen';
       }
     });
+  }
+
+  onToolbarAndFooterOptionChange(option: string) {
+    this.configService.setSelectedToolbarAndFooterOption(option);
+  }
+
+  onTitleOptionChange(option: string) {
+    this.configService.setSelectedTitleOption(option);
   }
 }

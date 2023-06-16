@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { ConfigService } from 'src/app/config.service';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() { }
+  @HostBinding('style.--custom-title-color') customColor: string = 'lightseagreen';
+  constructor(private configService: ConfigService) { }
 
-  ngOnInit(): void { }
+  ngOnInit() {
+    this.configService.getSelectedTitleOption().subscribe(option => {
+      if (option === 'lightseagreen') {
+        this.customColor = 'lightseagreen';
+      } else if (option === 'lightcoral') {
+        this.customColor = 'lightcoral';
+      } else {
+        this.customColor = 'lightseagreen';
+      }
+    });
+  }
 }

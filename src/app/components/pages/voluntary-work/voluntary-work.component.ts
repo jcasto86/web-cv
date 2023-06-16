@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, HostBinding } from "@angular/core";
 import { PreviousNextArrows } from "../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model";
+import { ConfigService } from "src/app/config.service";
 
 
 @Component({
@@ -15,9 +16,19 @@ export class VoluntaryWorkComponent {
     routerLinkNext: '/contact',
   };
 
-  constructor() {
+  @HostBinding('style.--custom-title-color') customColor: string = 'lightseagreen';
 
+  constructor(private configService: ConfigService) { }
+
+  ngOnInit() {
+    this.configService.getSelectedTitleOption().subscribe(option => {
+      if (option === 'lightseagreen') {
+        this.customColor = 'lightseagreen';
+      } else if (option === 'lightcoral') {
+        this.customColor = 'lightcoral';
+      } else {
+        this.customColor = 'lightseagreen';
+      }
+    });
   }
-
-
 }

@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostBinding, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, of } from 'rxjs';
 import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model';
 import { DataService } from 'src/app/data.service';
 import { JobPosition } from './job-position-data.model';
 import { Router } from '@angular/router';
+import { ConfigService } from 'src/app/config.service';
 
 
 @Component({
@@ -14,6 +15,8 @@ import { Router } from '@angular/router';
 export class WorkExperienceComponent implements OnInit, OnDestroy {
 
   public showLoggedInElements: boolean = false;
+
+  @HostBinding('style.--custom-title-color') customColor: string = 'lightseagreen';
 
   @HostListener('window:keyup.escape') handleKeyUp() {
     this.closeFormModal()
@@ -53,16 +56,28 @@ export class WorkExperienceComponent implements OnInit, OnDestroy {
     routerLinkNext: '/education',
   };
 
-  constructor(private dataService: DataService, private router: Router) {
+  constructor(private dataService: DataService, private router: Router, private configService: ConfigService) {
     this.jobPositionsCardData$ = this.dataService.getJobPositions();
   }
 
   public ngOnInit(): void {
+
+    this.configService.getSelectedTitleOption().subscribe(option => {
+      if (option === 'lightseagreen') {
+        this.customColor = 'lightseagreen';
+      } else if (option === 'lightcoral') {
+        this.customColor = 'lightcoral';
+      } else {
+        this.customColor = 'lightseagreen';
+      }
+    });
+
     if (this.router.url === '/dashboard/work-experience') {
       this.showLoggedInElements = true
     }
     console.log('ROUTER', this.router.url);
     console.log(this.router.url === '/dashboard/work-experience');
+
   }
 
   public ngOnDestroy(): void {

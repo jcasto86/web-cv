@@ -1,0 +1,53 @@
+<div class="config__header">
+  <h2 class="config__header__title">Job Positions</h2>
+  <p class="config__header__subtitle">Insert description</p>
+</div>
+
+<div style="margin-top: 2rem; margin-bottom: 2rem">
+  <p>Choose a <b>Toolbar & Footer color</b>:</p>
+  <div style="color: lightseagreen; font-weight: 600">
+    <input
+      [defaultChecked]="true"
+      type="radio"
+      name="toolbar"
+      value="lightseagreen"
+      (change)="onToolbarAndFooterOptionChange('lightseagreen')"
+    />
+    GREEN
+  </div>
+
+  <div style="color: coral; font-weight: 600">
+    <input
+      type="radio"
+      name="toolbar"
+      value="lightcoral"
+      (change)="onToolbarAndFooterOptionChange('lightcoral')"
+    />
+    CORAL
+  </div>
+</div>
+
+<div style="margin-top: 2rem; margin-bottom: 2rem">
+  <p>Choose a <b>Titles color</b>:</p>
+  <div style="color: lightseagreen; font-weight: 600">
+    <input
+      [defaultChecked]="true"
+      type="radio"
+      name="title"
+      value="lightseagreen"
+      (change)="onTitleOptionChange('lightseagreen')"
+    />
+    GREEN
+  </div>
+
+  <div style="color: coral; font-weight: 600">
+    <input
+      type="radio"
+      name="title"
+      value="lightcoral"
+      (change)="onTitleOptionChange('lightcoral')"
+    />
+    CORAL
+  </div>
+  <br />
+</div>

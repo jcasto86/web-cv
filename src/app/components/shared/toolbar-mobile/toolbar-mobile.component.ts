@@ -1,5 +1,6 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { ConfigService } from 'src/app/config.service';
 
 @Component({
   selector: 'app-toolbar-mobile',
@@ -15,15 +16,25 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class ToolbarMobileComponent implements OnInit {
+  @HostBinding('style.--custom-toolbar-footer-color') customColor: string = 'lightseagreen';
 
   /**
  * Indicates whether the modal is open.
  */
   public isModalOpen: boolean = false;
 
-  constructor() { }
+  constructor(private configService: ConfigService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.configService.getSelectedToolbarAndFooterOption().subscribe(option => {
+      if (option === 'lightseagreen') {
+        this.customColor = 'lightseagreen';
+      } else if (option === 'lightcoral') {
+        this.customColor = 'lightcoral';
+      } else {
+        this.customColor = 'lightseagreen';
+      }
+    });
   }
 
   // Method to close the Form Modal component

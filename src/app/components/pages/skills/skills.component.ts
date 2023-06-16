@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, HostBinding, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { PreviousNextArrows } from '../../parts/arrows-previous-next-section/arrows-previous-next-section-data.model';
 import { Skill } from './skill-data.model';
 import { DataService } from '../../../data.service';
@@ -6,6 +6,7 @@ import { Observable, Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmDialogComponent } from '../../parts/confirm-dialog/confirm-dialog.component';
 import { Router } from '@angular/router';
+import { ConfigService } from 'src/app/config.service';
 
 @Component({
   selector: 'app-skills',
@@ -13,6 +14,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent implements OnInit, OnDestroy {
+
+  @HostBinding('style.--custom-title-color') customColor: string = 'lightseagreen';
 
   public showLoggedInElements: boolean = false;
 
@@ -46,13 +49,24 @@ export class SkillsComponent implements OnInit, OnDestroy {
     routerLinkNext: '/voluntary-work',
   };
 
-  constructor(private dataService: DataService, private modalService: NgbModal, private router: Router) {
+  constructor(private dataService: DataService, private modalService: NgbModal, private router: Router, private configService: ConfigService) {
 
     this.skillsList$ = this.dataService.getSkills()
 
   }
 
   public ngOnInit(): void {
+
+    this.configService.getSelectedTitleOption().subscribe(option => {
+      if (option === 'lightseagreen') {
+        this.customColor = 'lightseagreen';
+      } else if (option === 'lightcoral') {
+        this.customColor = 'lightcoral';
+      } else {
+        this.customColor = 'lightseagreen';
+      }
+    });
+
     if (this.router.url === '/dashboard/skills') {
       this.showLoggedInElements = true
     }

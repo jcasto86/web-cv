@@ -33,6 +33,7 @@ import { EmailSentThankYouComponent } from './components/pages/contact/email-sen
 import { SkillsFormComponent } from './components/pages/skills/skills-form/skills-form.component';
 import { EducationFormComponent } from './components/pages/education/education-form/education-form.component';
 import { LogComponent } from './components/pages/log/log.component';
+import { ConfigComponent } from './components/pages/log/config/config.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { LogComponent } from './components/pages/log/log.component';
     SkillsFormComponent,
     EducationFormComponent,
     LogComponent,
+    ConfigComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, NgbModalModule],
   providers: [],
