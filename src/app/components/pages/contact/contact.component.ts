@@ -12,8 +12,8 @@ export class ContactComponent implements OnInit {
 
 
   public arrowsData: PreviousNextArrows = {
-    previousText: 'Volunteering',
-    routerLinkPrevious: '/voluntary-work',
+    previousText: 'Skills',
+    routerLinkPrevious: '/skills',
     // nextText: 'Skills',
     // routerLinkNext: '/skills',
   };

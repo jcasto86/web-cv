@@ -51,6 +51,13 @@
         </div>
       </div>
 
+      <div *ngIf="log.authorized === 1">
+        <p>Logged In User:</p>
+        <h5>Javier Casto</h5>
+      </div>
+
+      <br />
+
       <button
         *ngIf="log.authorized === 1"
         class="btn btn-secondary"

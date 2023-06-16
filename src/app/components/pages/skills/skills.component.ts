@@ -45,8 +45,8 @@ export class SkillsComponent implements OnInit, OnDestroy {
   public arrowsData: PreviousNextArrows = {
     previousText: 'Education',
     routerLinkPrevious: '/education',
-    nextText: 'Volunteering',
-    routerLinkNext: '/voluntary-work',
+    nextText: 'Conctact',
+    routerLinkNext: '/contact',
   };
 
   constructor(private dataService: DataService, private modalService: NgbModal, private router: Router, private configService: ConfigService) {
