@@ -1,91 +1,103 @@
 <div class="config__header">
-  <h2 class="config__header__title">Job Positions</h2>
-  <p class="config__header__subtitle">Insert description</p>
+  <h2 class="config__header__title">Configuration</h2>
+  <p class="config__header__subtitle">
+    From this page, you will be able to control the appearance of different elements on the website!
+  </p>
 </div>
 
-<div style="margin-top: 2rem; margin-bottom: 2rem">
-  <p>Choose a <b>Toolbar & Footer color</b>:</p>
-  <div style="color: lightseagreen; font-weight: 600">
-    <input
-      [defaultChecked]="true"
-      type="radio"
-      name="toolbar"
-      value="lightseagreen"
-      (change)="onToolbarAndFooterOptionChange('lightseagreen')"
-    />
-    Green
-  </div>
+<!-- TOOLBAR AND FOOTER -->
 
-  <div style="color: coral; font-weight: 600">
-    <input
-      type="radio"
-      name="toolbar"
-      value="lightcoral"
-      (change)="onToolbarAndFooterOptionChange('lightcoral')"
-    />
-    Coral
-  </div>
-</div>
+<div class="config__body">
+  <div class="config__body__controls">
+    <div class="config__body__controls__blocks" style="margin-top: 2rem; margin-bottom: 2rem">
+      <p>Choose a <b>Toolbar & Footer color</b>:</p>
+      <div style="color: lightseagreen; font-weight: 600">
+        <input
+          [defaultChecked]="true"
+          type="radio"
+          name="toolbar"
+          value="lightseagreen"
+          (change)="onToolbarAndFooterOptionChange('lightseagreen')"
+        />
+        Green
+      </div>
 
-<div style="margin-top: 2rem; margin-bottom: 2rem">
-  <p>Choose a <b>Titles color</b>:</p>
-  <div style="color: lightseagreen; font-weight: 600">
-    <input
-      [defaultChecked]="true"
-      type="radio"
-      name="title"
-      value="lightseagreen"
-      (change)="onTitleOptionChange('lightseagreen')"
-    />
-    Green
-  </div>
+      <div style="color: coral; font-weight: 600">
+        <input
+          type="radio"
+          name="toolbar"
+          value="lightcoral"
+          (change)="onToolbarAndFooterOptionChange('lightcoral')"
+        />
+        Coral
+      </div>
+    </div>
 
-  <div style="color: coral; font-weight: 600">
-    <input
-      type="radio"
-      name="title"
-      value="lightcoral"
-      (change)="onTitleOptionChange('lightcoral')"
-    />
-    Coral
-  </div>
-  <br />
-</div>
+    <!-- TITLES -->
 
-<div style="margin-top: 2rem; margin-bottom: 2rem">
-  <p>Choose a <b>Background style</b>:</p>
-  <div style="color: darkgoldenrod; font-weight: 600">
-    <input
-      type="radio"
-      id="option1"
-      name="option"
-      value="option1"
-      (change)="changeBackgroundImage('option1')"
-      checked
-    />
-    Old White Paper
-  </div>
+    <div class="config__body__controls__blocks" style="margin-top: 2rem; margin-bottom: 2rem">
+      <p>Choose a <b>Titles color</b>:</p>
+      <div style="color: lightseagreen; font-weight: 600">
+        <input
+          [defaultChecked]="true"
+          type="radio"
+          name="title"
+          value="lightseagreen"
+          (change)="onTitleOptionChange('lightseagreen')"
+        />
+        Green
+      </div>
 
-  <div style="color: blueviolet; font-weight: 600">
-    <input
-      type="radio"
-      id="option2"
-      name="option"
-      value="option2"
-      (change)="changeBackgroundImage('option2')"
-    />
-    Colourful Vectors
-  </div>
+      <div style="color: coral; font-weight: 600">
+        <input
+          type="radio"
+          name="title"
+          value="lightcoral"
+          (change)="onTitleOptionChange('lightcoral')"
+        />
+        Coral
+      </div>
+      <br />
+    </div>
 
-  <div style="color: palevioletred; font-weight: 600">
-    <input
-      type="radio"
-      id="option3"
-      name="option"
-      value="option3"
-      (change)="changeBackgroundImage('option3')"
-    />
-    Pink Clouds
+    <!-- BACKGROUND -->
+
+    <div class="config__body__controls__blocks" style="margin-top: 2rem; margin-bottom: 2rem">
+      <p>Choose a <b>Background style</b>:</p>
+      <div style="color: darkgoldenrod; font-weight: 600">
+        <input
+          type="radio"
+          id="option1"
+          name="option"
+          value="option1"
+          (change)="changeBackgroundImage('option1')"
+          checked
+        />
+        Ancient White Paper
+      </div>
+
+      <div style="color: blueviolet; font-weight: 600">
+        <input
+          type="radio"
+          id="option2"
+          name="option"
+          value="option2"
+          (change)="changeBackgroundImage('option2')"
+        />
+        Colorful Vectors
+      </div>
+
+      <div style="color: palevioletred; font-weight: 600">
+        <input
+          type="radio"
+          id="option3"
+          name="option"
+          value="option3"
+          (change)="changeBackgroundImage('option3')"
+        />
+        Pink Clouds
+      </div>
+      <br />
+    </div>
   </div>
-  <br />
 </div>

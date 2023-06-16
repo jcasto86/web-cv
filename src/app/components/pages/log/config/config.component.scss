@@ -1,5 +1,37 @@
-.config__header {
-  color: var(--custom-title-color);
-  text-align: center;
-  margin-bottom: 3rem;
+.config {
+  &__header {
+    color: var(--custom-title-color);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__controls {
+      max-width: 18rem;
+
+      input[type='radio'] {
+        transform: scale(1.5);
+        margin-right: 0.5rem;
+        // filter: grayscale(100%) contrast(200%);
+        // accent-color: red;
+        // appearance: none;
+        accent-color: grey;
+      }
+
+      &__blocks {
+        & > p {
+          font-size: 1.125rem;
+        }
+
+        & > div {
+          font-size: 1.125rem;
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
 }
