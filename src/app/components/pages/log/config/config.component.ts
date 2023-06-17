@@ -9,6 +9,13 @@ import { ConfigService } from 'src/app/config.service';
 export class ConfigComponent implements OnInit {
   @HostBinding('style.--custom-title-color') customColor: string = 'lightseagreen';
 
+  public radioOption?: string;
+
+  public radioOption2?: string;
+
+  public radioOption3?: string;
+
+
   constructor(private configService: ConfigService, private renderer: Renderer2) { }
 
   ngOnInit() {
@@ -21,14 +28,23 @@ export class ConfigComponent implements OnInit {
         this.customColor = 'lightseagreen';
       }
     });
+
+    this.radioOption = localStorage.getItem('selectedRadioOption') || 'lightseagreen';
+    this.radioOption2 = localStorage.getItem('selectedRadioOption2') || 'lightseagreen';
+    this.radioOption3 = localStorage.getItem('selectedRadioOption3') || 'option1';
+
   }
 
   onToolbarAndFooterOptionChange(option: string) {
     this.configService.setSelectedToolbarAndFooterOption(option);
+
+    this.radioOption = option;
+    localStorage.setItem('selectedRadioOption', option);
   }
 
   onTitleOptionChange(option: string) {
     this.configService.setSelectedTitleOption(option);
+    localStorage.setItem('selectedRadioOption2', option);
   }
 
   changeBackgroundImage(option: string) {
@@ -38,13 +54,13 @@ export class ConfigComponent implements OnInit {
     } else if (option === 'option2') {
       // this.renderer.setStyle(body, 'background-image', 'url(/assets/images/3.jpg)');
       this.renderer.setStyle(body, 'background-image', 'url(/assets/images/1234.jpg)');
-
     }
 
     else if (option === 'option3') {
       this.renderer.setStyle(body, 'background-image', 'url(/assets/images/8.jpg)');
       // this.renderer.setStyle(body, 'background-image', 'url(/assets/images/1234.jpg)');
-
     }
+
+    localStorage.setItem('selectedRadioOption3', option);
   }
 }
